@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="570.0" maxWidth="930.0" minHeight="570.0" minWidth="930.0" prefHeight="570.0" prefWidth="930.0" style="-fx-background-color: #282c36;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="50.0" prefWidth="932.0" style="-fx-background-color: #282c36;">
+         <children>
+            <JFXButton layoutX="714.0" layoutY="4.0" text="Daniela Hernandez" textFill="WHITE">
+               <font>
+                  <Font name="Futura Medium" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@../../../../../var/folders/xn/8rrqyrqn1f5b2x4tmdjjj_gw0000gn/T/com.iconjar.iconjar.pasteboard/1525658430/User.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="689.0" layoutY="9.0" prefHeight="17.0" prefWidth="15.0" style="-fx-background-color: #eb5c4b; -fx-background-radius: 30;" text="8" textFill="WHITE">
+               <font>
+                  <Font name="Futura Medium" size="10.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="659.0" layoutY="6.0" prefHeight="45.0" prefWidth="60.0" text=" " textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@../../../../../var/folders/xn/8rrqyrqn1f5b2x4tmdjjj_gw0000gn/T/com.iconjar.iconjar.pasteboard/1525658384/Inbox.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="-4.0" layoutY="1.0" prefHeight="48.0" prefWidth="71.0" text=" " textFill="#282c36">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@../../../../../var/folders/xn/8rrqyrqn1f5b2x4tmdjjj_gw0000gn/T/com.iconjar.iconjar.pasteboard/1525658563/Menu.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+         <effect>
+            <DropShadow height="18.0" radius="8.5" width="18.0" />
+         </effect>
+      </AnchorPane>
+      <JFXListView fx:id="list_EE11" layoutX="322.0" layoutY="128.0" onMouseClicked="#showPopup" prefHeight="423.0" prefWidth="591.0" style="-fx-background-color: #F5F5F5;">
+         <effect>
+            <DropShadow />
+         </effect>
+      </JFXListView>
+      <JFXTextField focusColor="#86bd01" layoutX="617.0" layoutY="65.0" prefHeight="41.0" prefWidth="291.0" promptText="Buscar" style="-fx-text-fill: ffffff;" unFocusColor="WHITE">
+         <font>
+            <Font name="Futura Medium" size="14.0" />
+         </font>
+      </JFXTextField>
+      <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="587.0" layoutY="79.0">
+         <image>
+            <Image url="@../../../../../var/folders/xn/8rrqyrqn1f5b2x4tmdjjj_gw0000gn/T/com.iconjar.iconjar.pasteboard/1525659353/Search.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="25.0" layoutY="65.0" prefHeight="54.0" prefWidth="257.0" text="Categorias" textAlignment="CENTER" textFill="#86bd01">
+         <font>
+            <Font name="Futura Bold" size="30.0" />
+         </font>
+      </Label>
+      <JFXListView fx:id="list_EE1" layoutX="17.0" layoutY="129.0" onMouseClicked="#showPopup" prefHeight="421.0" prefWidth="260.0" style="-fx-background-color: #F5F5F5;">
+         <effect>
+            <DropShadow />
+         </effect>
+      </JFXListView>
+   </children>
+</AnchorPane>
