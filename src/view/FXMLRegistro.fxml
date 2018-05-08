@@ -11,90 +11,96 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #282c36;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+
+<StackPane fx:id="rootPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLRegistroController">
    <children>
-      <AnchorPane layoutX="11.0" layoutY="14.0" prefHeight="373.0" prefWidth="578.0" style="-fx-background-color: #ffffff;">
-         <effect>
-            <DropShadow />
-         </effect>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #282c36;">
          <children>
-            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="13.0" layoutY="12.0">
-               <image>
-                  <Image url="@Resources/Arrow%20Left.png" />
-               </image>
-            </ImageView>
-            <JFXPasswordField focusColor="#86bd01" labelFloat="true" layoutX="12.0" layoutY="281.0" prefHeight="27.0" prefWidth="267.0" promptText="Contraseña">
-               <font>
-                  <Font name="Futura Medium" size="13.0" />
-               </font>
-            </JFXPasswordField>
-            <JFXPasswordField focusColor="#86bd01" layoutX="13.0" layoutY="325.0" prefHeight="27.0" prefWidth="267.0" promptText="Repite tu contraseña">
-               <font>
-                  <Font name="Futura Medium" size="13.0" />
-               </font>
-            </JFXPasswordField>
-            <JFXTextField focusColor="#86bd01" labelFloat="true" layoutX="12.0" layoutY="60.0" promptText="Nombre">
-               <font>
-                  <Font name="Futura Medium" size="14.0" />
-               </font>
-            </JFXTextField>
-            <JFXTextField focusColor="#86bd01" labelFloat="true" layoutX="202.0" layoutY="60.0" promptText="Apellido Paterno">
-               <font>
-                  <Font name="Futura Medium" size="14.0" />
-               </font>
-            </JFXTextField>
-            <JFXTextField focusColor="#86bd01" labelFloat="true" layoutX="392.0" layoutY="60.0" promptText="Apellido Materno">
-               <font>
-                  <Font name="Futura Medium" size="14.0" />
-               </font>
-            </JFXTextField>
-            <JFXTextField focusColor="#86bd01" labelFloat="true" layoutX="12.0" layoutY="116.0" prefHeight="29.0" prefWidth="267.0" promptText="CURP">
-               <font>
-                  <Font name="Futura Medium" size="14.0" />
-               </font>
-            </JFXTextField>
-            <JFXDatePicker defaultColor="#86bd01" layoutX="289.0" layoutY="118.0" prefHeight="27.0" prefWidth="287.0" promptText="Fecha de nacimiento" />
-            <JFXTextField focusColor="#86bd01" labelFloat="true" layoutX="12.0" layoutY="230.0" prefHeight="29.0" prefWidth="267.0" promptText="Usuario">
-               <font>
-                  <Font name="Futura Medium" size="14.0" />
-               </font>
-            </JFXTextField>
-            <JFXButton layoutX="454.0" layoutY="9.0" text="Registrar">
-               <graphic>
-                  <ImageView fitHeight="20.0" fitWidth="20.0">
+            <AnchorPane layoutX="11.0" layoutY="14.0" prefHeight="373.0" prefWidth="578.0" style="-fx-background-color: #ffffff;">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="13.0" layoutY="12.0">
                      <image>
-                        <Image url="@Resources/Checkmark.png" />
+                        <Image url="@../resources/Arrow%20Left.png" />
                      </image>
                   </ImageView>
-               </graphic>
-               <font>
-                  <Font name="Futura Bold" size="13.0" />
-               </font>
-            </JFXButton>
-            <JFXRadioButton layoutX="69.0" layoutY="201.0" prefHeight="18.0" prefWidth="107.0" text="Hombre">
-               <font>
-                  <Font name="Futura Medium" size="13.0" />
-               </font>
-            </JFXRadioButton>
-            <JFXRadioButton layoutX="68.0" layoutY="180.0" prefHeight="18.0" prefWidth="99.0" text="Mujer">
-               <font>
-                  <Font name="Futura Medium" size="13.0" />
-               </font>
-            </JFXRadioButton>
-            <Label layoutX="20.0" layoutY="158.0" text="Género">
-               <font>
-                  <Font name="Futura Medium" size="13.0" />
-               </font>
-            </Label>
-            <Label layoutX="302.0" layoutY="180.0" prefHeight="18.0" prefWidth="92.0" text="Categorias">
-               <font>
-                  <Font name="Futura Medium" size="13.0" />
-               </font>
-            </Label>
+                  <JFXPasswordField focusColor="#86bd01" labelFloat="true" layoutX="12.0" layoutY="281.0" prefHeight="27.0" prefWidth="267.0" promptText="Contraseña">
+                     <font>
+                        <Font name="Futura Medium" size="13.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <JFXPasswordField focusColor="#86bd01" layoutX="13.0" layoutY="325.0" prefHeight="27.0" prefWidth="267.0" promptText="Repite tu contraseña">
+                     <font>
+                        <Font name="Futura Medium" size="13.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <JFXTextField focusColor="#86bd01" labelFloat="true" layoutX="12.0" layoutY="60.0" promptText="Nombre">
+                     <font>
+                        <Font name="Futura Medium" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField focusColor="#86bd01" labelFloat="true" layoutX="202.0" layoutY="60.0" promptText="Apellido Paterno">
+                     <font>
+                        <Font name="Futura Medium" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField focusColor="#86bd01" labelFloat="true" layoutX="392.0" layoutY="60.0" promptText="Apellido Materno">
+                     <font>
+                        <Font name="Futura Medium" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField focusColor="#86bd01" labelFloat="true" layoutX="12.0" layoutY="116.0" prefHeight="29.0" prefWidth="267.0" promptText="CURP">
+                     <font>
+                        <Font name="Futura Medium" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXDatePicker defaultColor="#86bd01" layoutX="289.0" layoutY="118.0" prefHeight="27.0" prefWidth="287.0" promptText="Fecha de nacimiento" />
+                  <JFXTextField focusColor="#86bd01" labelFloat="true" layoutX="12.0" layoutY="230.0" prefHeight="29.0" prefWidth="267.0" promptText="Usuario">
+                     <font>
+                        <Font name="Futura Medium" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXButton layoutX="454.0" layoutY="9.0" text="Registrar">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0">
+                           <image>
+                              <Image url="@../resources/Checkmark.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Futura Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXRadioButton layoutX="69.0" layoutY="201.0" prefHeight="18.0" prefWidth="107.0" text="Hombre">
+                     <font>
+                        <Font name="Futura Medium" size="13.0" />
+                     </font>
+                  </JFXRadioButton>
+                  <JFXRadioButton layoutX="68.0" layoutY="180.0" prefHeight="18.0" prefWidth="99.0" text="Mujer">
+                     <font>
+                        <Font name="Futura Medium" size="13.0" />
+                     </font>
+                  </JFXRadioButton>
+                  <Label layoutX="20.0" layoutY="158.0" text="Género">
+                     <font>
+                        <Font name="Futura Medium" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="302.0" layoutY="180.0" prefHeight="18.0" prefWidth="92.0" text="Categorias">
+                     <font>
+                        <Font name="Futura Medium" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <JFXListView fx:id="list_EE11" layoutX="308.0" layoutY="219.0" prefHeight="159.0" prefWidth="267.0" style="-fx-background-color: #F5F5F5;" />
          </children>
       </AnchorPane>
-      <JFXListView fx:id="list_EE11" layoutX="308.0" layoutY="219.0" onMouseClicked="#showPopup" prefHeight="159.0" prefWidth="267.0" style="-fx-background-color: #F5F5F5;" />
    </children>
-</AnchorPane>
+</StackPane>

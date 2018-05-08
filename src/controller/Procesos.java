@@ -20,9 +20,11 @@ public class Procesos extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/view/FXMLLogin.fxml"));
-        
+        stage.setTitle("Plataforma de Gstión del Aprendizaje");
         Scene scene = new Scene(root);
         
+        stage.setResizable(false);
+        stage.sizeToScene();
         stage.setScene(scene);
         stage.show();
     }
