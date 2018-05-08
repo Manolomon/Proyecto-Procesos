@@ -7,13 +7,13 @@
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
-
 
 <StackPane fx:id="rootPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLRegistroController">
    <children>
@@ -77,12 +77,15 @@
                         <Font name="Futura Bold" size="13.0" />
                      </font>
                   </JFXButton>
-                  <JFXRadioButton layoutX="69.0" layoutY="201.0" prefHeight="18.0" prefWidth="107.0" text="Hombre">
+                  <JFXRadioButton layoutX="133.0" layoutY="190.0" prefHeight="18.0" prefWidth="107.0" style="-jfx-selected-color: #86bd01;" text="Hombre">
                      <font>
                         <Font name="Futura Medium" size="13.0" />
                      </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="grupoGenero" />
+                     </toggleGroup>
                   </JFXRadioButton>
-                  <JFXRadioButton layoutX="68.0" layoutY="180.0" prefHeight="18.0" prefWidth="99.0" text="Mujer">
+                  <JFXRadioButton layoutX="14.0" layoutY="190.0" prefHeight="18.0" prefWidth="99.0" style="-jfx-selected-color: #86bd01;" text="Mujer" toggleGroup="$grupoGenero">
                      <font>
                         <Font name="Futura Medium" size="13.0" />
                      </font>
