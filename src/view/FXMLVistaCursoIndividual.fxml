@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -39,15 +40,28 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton layoutX="-4.0" layoutY="1.0" prefHeight="48.0" prefWidth="71.0" text=" " textFill="#282c36">
+            <JFXButton layoutX="-4.0" layoutY="1.0" prefHeight="48.0" prefWidth="150.0" text="Categorias" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0">
                      <image>
-                        <Image url="@../resources/Menu.png" />
+                        <Image url="@../resources/GRID.png" />
                      </image>
                   </ImageView>
                </graphic>
+               <font>
+                  <Font name="Futura Medium" size="16.0" />
+               </font>
             </JFXButton>
+            <JFXTextField focusColor="#86bd01" layoutX="290.0" layoutY="7.0" prefHeight="34.0" prefWidth="272.0" promptText="Buscar" style="-fx-prompt-text-fill: ffffff; -fx-text-fill: ffffff;" unFocusColor="WHITE">
+               <font>
+                  <Font name="Futura Medium" size="16.0" />
+               </font>
+            </JFXTextField>
+            <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="254.0" layoutY="18.0">
+               <image>
+                  <Image url="@../resources/Search.png" />
+               </image>
+            </ImageView>
          </children>
          <effect>
             <DropShadow height="18.0" radius="8.5" width="18.0" />
