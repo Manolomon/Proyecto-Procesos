@@ -34,7 +34,7 @@
                         <Font name="Futura Medium" size="13.0" />
                      </font>
                   </JFXPasswordField>
-                  <JFXPasswordField focusColor="#86bd01" layoutX="13.0" layoutY="325.0" prefHeight="27.0" prefWidth="267.0" promptText="Repite tu contraseña">
+                  <JFXPasswordField focusColor="#86bd01" labelFloat="true" layoutX="13.0" layoutY="325.0" prefHeight="27.0" prefWidth="267.0" promptText="Repite tu contraseña">
                      <font>
                         <Font name="Futura Medium" size="13.0" />
                      </font>
