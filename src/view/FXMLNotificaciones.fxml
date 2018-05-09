@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="247.0" prefWidth="274.0" style="-fx-background-color: #282c36;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXListView layoutX="-1.0" layoutY="39.0" prefHeight="211.0" prefWidth="275.0" />
+      <Label layoutX="10.0" layoutY="7.0" text="Notificaciones" textFill="WHITE">
+         <font>
+            <Font name="Futura Bold" size="19.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="243.0" layoutY="10.0">
+         <image>
+            <Image url="@../resources/Settings.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
