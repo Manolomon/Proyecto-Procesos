@@ -17,7 +17,7 @@
       <AnchorPane prefHeight="68.0" prefWidth="932.0" style="-fx-background-color: #282c36;">
          <children>
             <AnchorPane layoutX="248.0" layoutY="5.0" opacity="0.11" prefHeight="56.0" prefWidth="344.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 15;" />
-            <JFXTextField focusColor="#86bd01" layoutX="297.0" layoutY="11.0" prefHeight="34.0" prefWidth="272.0" promptText="Buscar" style="-fx-prompt-text-fill: ffffff; -fx-text-fill: ffffff;" unFocusColor="WHITE">
+            <JFXTextField focusColor="#fab549" layoutX="297.0" layoutY="11.0" prefHeight="34.0" prefWidth="272.0" promptText="Buscar" style="-fx-prompt-text-fill: ffffff; -fx-text-fill: ffffff;" unFocusColor="WHITE">
                <font>
                   <Font name="Futura Medium" size="16.0" />
                </font>
@@ -29,7 +29,7 @@
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0">
                      <image>
-                        <Image url="@../resources/User.png" />
+                        <Image url="@../resources/Profile.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -43,7 +43,7 @@
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0">
                      <image>
-                        <Image url="@../resources/Inbox.png" />
+                        <Image url="@../../../../../../../var/folders/xn/8rrqyrqn1f5b2x4tmdjjj_gw0000gn/T/com.iconjar.iconjar.pasteboard/1525880405/Inbox.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -98,7 +98,7 @@
                   <Font name="Futura Medium" size="18.0" />
                </font>
             </JFXRadioButton>
-            <JFXButton buttonType="RAISED" layoutX="389.0" layoutY="377.0" style="-fx-background-color: #86bd01; -fx-background-radius: 10;" text="Realizar pago" textFill="WHITE">
+            <JFXButton buttonType="RAISED" layoutX="389.0" layoutY="377.0" style="-fx-background-color: #fab549; -fx-background-radius: 10;" text="Realizar pago" textFill="WHITE">
                <font>
                   <Font name="Futura Medium" size="15.0" />
                </font>
