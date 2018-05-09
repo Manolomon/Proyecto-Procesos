@@ -19,7 +19,7 @@ import javafx.scene.layout.StackPane;
 /**
  * @author Manolo Pérez
  * @since Mon May 07 2018
- * @version 0.1
+ * @version 0.2
  */
 
 public class FXMLVistaCursosController implements Initializable {
@@ -62,11 +62,21 @@ public class FXMLVistaCursosController implements Initializable {
   // ==================================================================================================================
   // Eventos FXML
 
+  /**
+   * Evento de click en el botón de Inbox
+   * 
+   * @param event Evento de click en btnNotifCount
+   */
   @FXML
   void clickInbox(ActionEvent event) {
     btnNotifCount.setVisible(false);
   }
 
+  /**
+   * Evento de click en el botón de Cuenta
+   * 
+   * @param event Evento de click en btnUser
+   */
   @FXML
   void clickUser(ActionEvent event) {
     btnNotifCount.setVisible(true);

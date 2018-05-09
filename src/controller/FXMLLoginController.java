@@ -110,7 +110,6 @@ public class FXMLLoginController implements Initializable {
    */
   @FXML
   void clickSignIn(ActionEvent event) {
-    System.out.println("Click en Sign In");
     if (!camposIncompletos()) {
       cargarEscenaVistaCursos();
     } else {
@@ -156,7 +155,6 @@ public class FXMLLoginController implements Initializable {
     aceptar.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent e) {
-        System.out.println("Click en Aceptar");
         dialog.close();
       }
     });
