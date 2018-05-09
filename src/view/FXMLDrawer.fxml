@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="570.0" maxWidth="930.0" minHeight="570.0" minWidth="73.0" prefHeight="570.0" prefWidth="73.0" style="-fx-background-color: #282c36;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXButton layoutX="1.0" layoutY="56.0" prefHeight="48.0" prefWidth="71.0" text=" " textFill="#282c36" />
+   </children>
+</AnchorPane>

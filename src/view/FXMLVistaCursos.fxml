@@ -56,7 +56,7 @@
                   <DropShadow height="18.0" radius="8.5" width="18.0" />
                </effect>
             </AnchorPane>
-            <JFXListView fx:id="listCourses" layoutX="322.0" layoutY="128.0" prefHeight="423.0" prefWidth="591.0" style="-fx-background-color: #F5F5F5;">
+            <JFXListView fx:id="listCourses" layoutX="322.0" layoutY="128.0" prefHeight="423.0" prefWidth="590.0" style="-fx-background-color: #F5F5F5;">
                <effect>
                   <DropShadow />
                </effect>
