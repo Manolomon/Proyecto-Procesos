@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Usuario">
+    <select id="obtenerAllUsuarios" resultType="model.pojos.Usuario">
+        SELECT * FROM usuario
+    </select>
+    
+    <select id="obtenerUsuario" resultType="model.pojos.Usuario" parameterType="model.pojos.Login">
+        SELECT * FROM usuario WHERE matricula = #{matricula} AND contrasena = #{contrasena} LIMIT 1
+    </select>    
+    
+     <insert id="registrarUsuario" parameterType="model.pojos.Usuario">
+        INSERT INTO usuario (idUsuario,CURP,nombre,apellidoPaterno,apellidoMaterno,fechaNacimiento,genero,matricula,contrasena)
+        VALUES(#{idUsuario},#{CURP},#{nombre},#{apellidoPaterno},#{apellidoMaterno},#{fechaNacimiento},#{genero},#{matricula},#{contrasena})
+    </insert>
+    
+    <delete id="eliminarUsuario" parameterType="Integer">
+        DELETE FROM usuario WHERE idUsuario = #{idUsuario}
+    </delete>
+    
+    <select id="obtenerGrupoDeUsuario" resultType="model.pojos.Grupo" parameterType="Integer">
+        SELECT g.idgrupo, g.cupo, g.alumnos, g.idcurso
+        FROM grupo g
+        LEFT OUTER JOIN pago p ON p.idGrupo = g.idGrupo
+        LEFT OUTER JOIN usuario s ON s.idUsuario = p.idUsuaio
+    </select>
+</mapper>
+

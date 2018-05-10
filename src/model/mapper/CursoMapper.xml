@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Curso">
+    <select id="obtenerAllCursos" resultType="model.pojos.Curso">
+        SELECT * FROM curso
+    </select>
+    
+    <select id="obtenerAllCursosOrdenados" resultType="model.pojos.Curso">
+        SELECT * FROM curso ORDER BY categoria
+    </select>
+    
+    <select id="obtenerAllCursosDeCategoria" resultType="model.pojos.Curso" parameterType="String">
+        SELECT * FROM curso WHERE categoria = #{categoria}
+    </select>
+    
+    <select id="obtenerCurso" resultType="model.pojos.Curso" parameterType="Integer">
+        SELECT * FROM curso WHERE idCurso = #{idCurso}
+    </select>    
+    
+     <insert id="registrarCurso" parameterType="model.pojos.Curso">
+        INSERT INTO curso (idCurso,nombre,categoria,precio,fechaInicio,fechaFin,imagen)
+        VALUES(#{idCurso},#{nombre},#{categoria},#{precio},#{fechaInicio},#{fechaFin},#{imagen})
+    </insert>
+    
+    <delete id="eliminarCurso" parameterType="Integer">
+        DELETE FROM curso WHERE idCurso = #{idCurso}
+    </delete>
+    
+    <select id="obtenerGrupoDeCurso" resultType="model.pojos.Grupo">
+        SELECT g.idgrupo, g.cupo, g.alumnos, g.idcurso
+        FROM grupo g
+        LEFT OUTER JOIN curso c ON c.idGrupo = g.idGrupo
+    </select>
+    
+    <insert id="registrarGrupo" parameterType="model.pojos.Grupo">
+        INSERT INTO grupo (idGrupo,idCurso)
+        VALUES(#{idCurso},#{idCurso})
+    </insert>
+</mapper>
+

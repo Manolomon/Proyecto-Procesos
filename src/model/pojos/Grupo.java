@@ -12,6 +12,7 @@ package model.pojos;
 public class Grupo {
     private Integer idGrupo;
     private Integer cupo;
+    private Integer alumnos;
     private Integer idCurso;
 
     public Grupo() {
@@ -39,6 +40,14 @@ public class Grupo {
 
     public void setIdCurso(Integer idCurso) {
         this.idCurso = idCurso;
+    }
+
+    public Integer getAlumnos() {
+        return alumnos;
+    }
+
+    public void setAlumnos(Integer alumnos) {
+        this.alumnos = alumnos;
     }
     
     

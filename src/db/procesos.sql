@@ -20,7 +20,7 @@ CREATE TABLE Usuario (
     apellidoPaterno varchar(25),
     apellidoMaterno varchar(25),
     genero varchar(1),
-    usuario varchar(30),
+    matricula varchar(30),
     contrasena varchar(20),
     PRIMARY KEY (idUsuario)
 );
@@ -28,8 +28,9 @@ CREATE TABLE Usuario (
 CREATE TABLE Grupo (
     idGrupo int,
     cupo int DEFAULT 30,
+    alumnos int DEFAULT 0,
     idCurso int,
-    PRIMARY KEY (idGrupo)
+    PRIMARY KEY (idGrupo),
     FOREIGN KEY (idCurso) REFERENCES Curso(idCurso)
 );
 
@@ -49,8 +50,8 @@ CREATE TABLE Pago (
     informacionDePago varchar(500),
     estado varchar(20),
     idUsuario int,
-    idCurso int,
+    idGrupo int,
     PRIMARY KEY (idPago),
     FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario),
-    FOREIGN KEY (idCurso) REFERENCES Curso(idCurso)
+    FOREIGN KEY (idGrupo) REFERENCES Grupo(idGrupo)
 );
