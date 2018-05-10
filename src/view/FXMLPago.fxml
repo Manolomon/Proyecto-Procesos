@@ -17,7 +17,7 @@
       <AnchorPane prefHeight="68.0" prefWidth="932.0" style="-fx-background-color: #282c36;">
          <children>
             <AnchorPane layoutX="248.0" layoutY="5.0" opacity="0.11" prefHeight="56.0" prefWidth="344.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 15;" />
-            <JFXTextField focusColor="#fdc502" layoutX="297.0" layoutY="11.0" prefHeight="34.0" prefWidth="272.0" promptText="Buscar" style="-fx-prompt-text-fill: ffffff; -fx-text-fill: ffffff;" unFocusColor="WHITE">
+            <JFXTextField focusColor="#fdc502" layoutX="297.0" layoutY="11.0" prefHeight="34.0" prefWidth="272.0" promptText="Buscar" style="-fx-prompt-text-fill: ffffff; -fx-text-fill: ffffff;" styleClass="jfx-text-field" stylesheets="@styles.css" unFocusColor="WHITE">
                <font>
                   <Font name="Futura Medium" size="16.0" />
                </font>
@@ -103,32 +103,32 @@
                   <Font name="Futura Medium" size="15.0" />
                </font>
             </JFXButton>
-            <JFXTextField focusColor="#fdc502" labelFloat="true" layoutX="249.0" layoutY="126.0" prefHeight="34.0" prefWidth="251.0" promptText="Numero de Tarjeta">
+            <JFXTextField focusColor="#fdc502" labelFloat="true" layoutX="249.0" layoutY="139.0" prefHeight="34.0" prefWidth="251.0" promptText="Numero de Tarjeta" styleClass="jfx-text-field" stylesheets="@styles.css">
                <font>
                   <Font name="Futura Medium" size="16.0" />
                </font>
             </JFXTextField>
-            <JFXTextField focusColor="#fdc502" labelFloat="true" layoutX="249.0" layoutY="189.0" prefHeight="34.0" prefWidth="60.0" promptText="MM">
+            <JFXTextField focusColor="#fdc502" labelFloat="true" layoutX="249.0" layoutY="202.0" prefHeight="34.0" prefWidth="60.0" promptText="MM" styleClass="jfx-text-field" stylesheets="@styles.css">
                <font>
                   <Font name="Futura Medium" size="16.0" />
                </font>
             </JFXTextField>
-            <JFXTextField focusColor="#fdc502" labelFloat="true" layoutX="324.0" layoutY="189.0" prefHeight="34.0" prefWidth="79.0" promptText="AAAA">
+            <JFXTextField focusColor="#fdc502" labelFloat="true" layoutX="324.0" layoutY="202.0" prefHeight="34.0" prefWidth="79.0" promptText="AAAA" styleClass="jfx-text-field" stylesheets="@styles.css">
                <font>
                   <Font name="Futura Medium" size="16.0" />
                </font>
             </JFXTextField>
-            <JFXTextField focusColor="#fdc502" labelFloat="true" layoutX="421.0" layoutY="189.0" prefHeight="34.0" prefWidth="79.0" promptText="CVC">
+            <JFXTextField focusColor="#fdc502" labelFloat="true" layoutX="421.0" layoutY="202.0" prefHeight="34.0" prefWidth="79.0" promptText="CVC" styleClass="jfx-text-field" stylesheets="@styles.css">
                <font>
                   <Font name="Futura Medium" size="16.0" />
                </font>
             </JFXTextField>
-            <JFXTextField focusColor="#fdc502" labelFloat="true" layoutX="249.0" layoutY="254.0" prefHeight="34.0" prefWidth="251.0" promptText="Nombre en la tarjeta">
+            <JFXTextField focusColor="#fdc502" labelFloat="true" layoutX="249.0" layoutY="267.0" prefHeight="34.0" prefWidth="251.0" promptText="Nombre en la tarjeta" styleClass="jfx-text-field" stylesheets="@styles.css">
                <font>
                   <Font name="Futura Medium" size="16.0" />
                </font>
             </JFXTextField>
-            <JFXCheckBox checkedColor="#4684c6" layoutX="249.0" layoutY="310.0" text="Recordar Tarjeta" textFill="#4684c6">
+            <JFXCheckBox checkedColor="#4684c6" layoutX="249.0" layoutY="323.0" text="Recordar Tarjeta" textFill="#4684c6">
                <font>
                   <Font name="Futura Medium" size="16.0" />
                </font>

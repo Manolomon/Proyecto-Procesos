@@ -1,0 +1,11 @@
+.root {
+    -fx-primary-color: #fbc700;
+    -fx-secondary-color:#fa5130;
+    -fx-tertiary-color: #dd2476;
+    /*-fx-font-family: "Futura";*/
+}
+
+.jfx-text-field{
+    -jfx-focus-color: -fx-primary-color;
+    -jfx-unfocus-color: -fx-secondary-color;
+}

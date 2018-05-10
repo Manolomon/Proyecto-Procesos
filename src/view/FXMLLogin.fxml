@@ -29,7 +29,7 @@
                         <Font name="Futura Medium" size="14.0" />
                      </font>
                   </JFXButton>
-                  <JFXTextField fx:id="txtUsuario" focusColor="#df3886" labelFloat="true" layoutX="19.0" layoutY="156.0" prefHeight="40.0" prefWidth="298.0" promptText="Usuario" style="-fx-prompt-text-fill: ffffff; -fx-text-fill: ffffff;">
+                  <JFXTextField fx:id="txtUsuario" focusColor="#fdc502" labelFloat="true" layoutX="19.0" layoutY="156.0" prefHeight="40.0" prefWidth="298.0" promptText="Usuario" style="-fx-prompt-text-fill: ffffff; -fx-text-fill: ffffff;">
                      <font>
                         <Font name="Futura Medium" size="16.0" />
                      </font>
@@ -39,7 +39,7 @@
                         <Image url="@../resources/User.png" />
                      </image>
                   </ImageView>
-                  <JFXPasswordField fx:id="txtPassword" focusColor="#df3886" labelFloat="true" layoutX="14.0" layoutY="232.0" prefHeight="40.0" prefWidth="298.0" promptText="Contraseña" style="-fx-prompt-text-fill: ffffff; -fx-text-fill: ffffff;">
+                  <JFXPasswordField fx:id="txtPassword" focusColor="#fdc502" labelFloat="true" layoutX="14.0" layoutY="232.0" prefHeight="40.0" prefWidth="298.0" promptText="Contraseña" style="-fx-prompt-text-fill: ffffff; -fx-text-fill: ffffff;">
                      <font>
                         <Font name="Futura Medium" size="16.0" />
                      </font>
