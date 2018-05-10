@@ -1,4 +1,4 @@
-/**
+/*
  * FXMLLoginController.java
  *
  * Copyright (c) 2018, Royal Mango Developers

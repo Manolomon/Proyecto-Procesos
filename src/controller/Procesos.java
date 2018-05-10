@@ -1,8 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Procesos.java
+ *
+ * Copyright (c) 2018, Royal Mango Developers
+ * All rights reserved.
  */
+
 package controller;
 
 import javafx.application.Application;
@@ -12,8 +14,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- *
- * @author Manolo Perez
+ * 
+ * Clase principal de ejecución del sistema
+ * @author Manolo Pérez
+ * @since Mon May 07 2018
+ * @version 1.0
  */
 public class Procesos extends Application {
     

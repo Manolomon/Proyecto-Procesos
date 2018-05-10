@@ -1,4 +1,4 @@
-/**
+/*
  * FXMLVistaCursosController.java
  *
  * Copyright (c) 2018, Royal Mango Developers
@@ -17,6 +17,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.layout.StackPane;
 
 /**
+ * 
+ * Clase controlador de la escena Vista General de Cursos
+ * 
  * @author Manolo Pérez
  * @since Mon May 07 2018
  * @version 0.2
