@@ -28,7 +28,9 @@ CREATE TABLE Usuario (
 CREATE TABLE Grupo (
     idGrupo int,
     cupo int DEFAULT 30,
+    idCurso int,
     PRIMARY KEY (idGrupo)
+    FOREIGN KEY (idCurso) REFERENCES Curso(idCurso)
 );
 
 CREATE TABLE Curso (
