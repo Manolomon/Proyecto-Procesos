@@ -27,6 +27,8 @@ public class Procesos extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/view/FXMLLogin.fxml"));
         stage.setTitle("Plataforma de Gstión del Aprendizaje");
         Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("/view/styles.css").toExternalForm());
+        
         
         stage.setResizable(false);
         stage.sizeToScene();
