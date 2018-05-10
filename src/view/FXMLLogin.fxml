@@ -14,17 +14,17 @@
    <children>
       <AnchorPane maxHeight="570.0" maxWidth="930.0" minHeight="570.0" minWidth="930.0" prefHeight="570.0" prefWidth="930.0" style="-fx-background-color: #282c36;">
          <children>
-            <AnchorPane layoutX="303.0" layoutY="86.0" prefHeight="397.0" prefWidth="331.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #F6B454, #E33D7B);">
+            <AnchorPane layoutX="303.0" layoutY="86.0" prefHeight="397.0" prefWidth="331.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #fa5130, #dd2476);">
                <effect>
                   <DropShadow />
                </effect>
                <children>
-                  <JFXButton fx:id="btnSignIn" layoutX="81.0" layoutY="310.0" onAction="#clickSignIn" prefHeight="29.0" prefWidth="168.0" style="-fx-border-color: F6B454; -fx-border-radius: 30;" text="Iniciar Sesion" textFill="WHITE">
+                  <JFXButton fx:id="btnSignIn" layoutX="81.0" layoutY="310.0" onAction="#clickSignIn" prefHeight="29.0" prefWidth="168.0" style="-fx-border-color: #fdc502; -fx-border-radius: 30;" text="Iniciar Sesion" textFill="WHITE">
                      <font>
                         <Font name="Futura Medium" size="16.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="btnSignUp" layoutX="112.0" layoutY="353.0" onAction="#clickSignUp" prefHeight="29.0" prefWidth="102.0" style="-fx-background-radius: 30;" text="Registrarse" textFill="#df3886">
+                  <JFXButton fx:id="btnSignUp" layoutX="112.0" layoutY="353.0" onAction="#clickSignUp" prefHeight="29.0" prefWidth="102.0" style="-fx-background-radius: 30;" text="Registrarse" textFill="#fdc502">
                      <font>
                         <Font name="Futura Medium" size="14.0" />
                      </font>
