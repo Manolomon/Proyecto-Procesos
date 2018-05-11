@@ -57,8 +57,8 @@ CREATE TABLE Pago (
 
 CREATE TABLE Categoria (
     idCategoria int NOT NULL auto_increment,
-    nombre varchar(100)
-    PRIMARY KEY(idCategoria)
+    nombre varchar(100),
+    PRIMARY KEY (idCategoria)
 );
 
 ALTER TABLE Grupo ADD CONSTRAINT
@@ -100,5 +100,5 @@ INSERT INTO curso (nombre,idcategoria,precio,fechaInicio,fechaFin,imagen)
 INSERT INTO curso (nombre,idcategoria,precio,fechaInicio,fechaFin,imagen)
     VALUES("Economia", 2, 350, '2018-03-13', '2018-04-02', "/resources/Cursos/Economia.jpg");
 
-INSERT INTO curso (nombre,categoria,precio,fechaInicio,fechaFin,imagen)
+INSERT INTO curso (nombre,idcategoria,precio,fechaInicio,fechaFin,imagen)
     VALUES("Primeros Auxilios", 3, 249, '2018-03-13', '2018-04-02', "/resources/Cursos/Salud.png");
