@@ -81,7 +81,7 @@ INSERT INTO usuario (idUsuario,CURP,nombre,apellidoPaterno,apellidoMaterno,fecha
     VALUES(NULL, "1221", "Manolo", "Pérez", "Verdejo", '1998-03-13', "Hombre", "zS16011702", "1234");
 
 INSERT INTO usuario (idUsuario,CURP,nombre,apellidoPaterno,apellidoMaterno,fechaNacimiento,genero,matricula,contrasena)
-    VALUES(NULL, "1293", "Daniel", "Escamilla", "Cortez", '1997-02-22', "Hombre", "zS16011672", "1234");
+    VALUES(NULL, "1293", "Daniel", "Escamilla", "Cortés", '1997-02-17', "Hombre", "zS16011672", "1234");
 
 INSERT INTO usuario (idUsuario,CURP,nombre,apellidoPaterno,apellidoMaterno,fechaNacimiento,genero,matricula,contrasena)
     VALUES(NULL, "765237325", "Daniela", "Hernández", "Valenzuela", '1998-08-20', "Mujer", "zS16011678", "4321");
