@@ -5,7 +5,8 @@
  */
 package model.pojos;
 
-import java.util.Date;
+import java.sql.Date;
+
 
 /**
  *
@@ -23,6 +24,17 @@ public class Usuario {
     private String contrasena;
 
     public Usuario() {
+    }
+
+    public Usuario(String CURP, String nombre, String apellidoPaterno, String apellidoMaterno, Date fechaNacimiento, String genero, String matricula, String contrasena) {
+        this.CURP = CURP;
+        this.nombre = nombre;
+        this.apellidoPaterno = apellidoPaterno;
+        this.apellidoMaterno = apellidoMaterno;
+        this.fechaNacimiento = fechaNacimiento;
+        this.genero = genero;
+        this.matricula = matricula;
+        this.contrasena = contrasena;
     }
 
     public Usuario(Integer idUsuario, String CURP, String nombre, String apellidoPaterno, String apellidoMaterno, Date fechaNacimiento, String genero, String matricula, String contrasena) {

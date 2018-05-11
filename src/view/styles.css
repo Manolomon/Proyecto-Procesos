@@ -5,7 +5,7 @@
     /*-fx-font-family: "Futura";*/
 }
 
-.jfx-text-field, .jfx-password-field {
+jfx-text-field, jfx-password-field {
     /*-fx-prompt-text-fill: WHITE;*/
     -jfx-focus-color: -fx-primary-color;
     -jfx-unfocus-color: -fx-secondary-color;

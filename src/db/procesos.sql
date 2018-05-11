@@ -15,43 +15,63 @@ CREATE DATABASE Plataforma;
 USE Plataforma;
 
 CREATE TABLE Usuario (
-    idUsuario int,
+    idUsuario int NOT NULL auto_increment,
+    CURP varchar(25),
     nombre varchar(25),
     apellidoPaterno varchar(25),
     apellidoMaterno varchar(25),
-    genero varchar(1),
+    fechaNacimiento DATE,
+    genero varchar(15),
     matricula varchar(30),
     contrasena varchar(20),
     PRIMARY KEY (idUsuario)
 );
 
-CREATE TABLE Grupo (
-    idGrupo int,
-    cupo int DEFAULT 30,
-    alumnos int DEFAULT 0,
-    idCurso int,
-    PRIMARY KEY (idGrupo),
-    FOREIGN KEY (idCurso) REFERENCES Curso(idCurso)
-);
-
 CREATE TABLE Curso (
-    idGrupo int NOT NULL,
+    idCurso int NOT NULL auto_increment,
     nombre varchar(150),
     categoria varchar(100),
     precio double,
     fechaInicio date,
     fechaFin date,
-    imagen varchar(300), --url referencia a la imagen / tbd estilo de url
+    imagen varchar(300),
+    PRIMARY KEY (idCurso)
+);
+
+CREATE TABLE Grupo (
+    idGrupo int auto_increment,
+    cupo int DEFAULT 30,
+    alumnos int DEFAULT 0,
+    idCurso int,
     PRIMARY KEY (idGrupo)
 );
 
 CREATE TABLE Pago (
-    idPago int,
+    idPago int NOT NULL auto_increment,
     informacionDePago varchar(500),
     estado varchar(20),
     idUsuario int,
     idGrupo int,
-    PRIMARY KEY (idPago),
-    FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario),
-    FOREIGN KEY (idGrupo) REFERENCES Grupo(idGrupo)
+    PRIMARY KEY (idPago)
 );
+
+ALTER TABLE Grupo ADD CONSTRAINT
+    fk_grupo foreign key (idCurso)
+    REFERENCES Curso (idCurso);
+
+ALTER TABLE Pago ADD CONSTRAINT
+    fk_pago1 foreign key (idUsuario)
+    REFERENCES Usuario (idUsuario);
+
+ALTER TABLE Pago ADD CONSTRAINT
+    fk_pago2 foreign key (idGrupo)
+    REFERENCES Grupo (idGrupo);
+
+INSERT INTO usuario (idUsuario,CURP,nombre,apellidoPaterno,apellidoMaterno,fechaNacimiento,genero,matricula,contrasena)
+    VALUES(NULL, "1221", "Manolo", "Pérez", "Verdejo", '1998-03-13', "Hombre", "zS16011702", "1234");
+
+INSERT INTO usuario (idUsuario,CURP,nombre,apellidoPaterno,apellidoMaterno,fechaNacimiento,genero,matricula,contrasena)
+    VALUES(NULL, "1293", "Daniel", "Escamilla", "Cortez", '1997-02-22', "Hombre", "zS16011672", "1234");
+
+INSERT INTO usuario (idUsuario,CURP,nombre,apellidoPaterno,apellidoMaterno,fechaNacimiento,genero,matricula,contrasena)
+    VALUES(NULL, "765237325", "Daniela", "Hernández", "Valenzuela", '1998-08-20', "Mujer", "zS16011678", "4321");

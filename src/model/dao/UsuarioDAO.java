@@ -33,7 +33,7 @@ public class UsuarioDAO {
     
     public static Usuario obtenerUsuario(Login log)
     {
-        Usuario user = new Usuario();
+        Usuario user = null;
         SqlSession conn = null;
         try{
             conn = MyBatisUtils.getSession();

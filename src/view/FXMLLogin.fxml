@@ -39,7 +39,7 @@
                         <Image url="@../resources/User.png" />
                      </image>
                   </ImageView>
-                  <JFXPasswordField fx:id="txtPassword" focusColor="#fdc502" labelFloat="true" layoutX="14.0" layoutY="232.0" prefHeight="40.0" prefWidth="298.0" promptText="Contraseña" style="-fx-prompt-text-fill: ffffff; -fx-text-fill: ffffff;">
+                  <JFXPasswordField fx:id="txtPassword" focusColor="#fdc502" labelFloat="true" layoutX="14.0" layoutY="232.0" onAction="#enterPassword" prefHeight="40.0" prefWidth="298.0" promptText="Contraseña" style="-fx-prompt-text-fill: ffffff; -fx-text-fill: ffffff;">
                      <font>
                         <Font name="Futura Medium" size="16.0" />
                      </font>

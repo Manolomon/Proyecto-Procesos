@@ -13,8 +13,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </select>    
     
      <insert id="registrarUsuario" parameterType="model.pojos.Usuario">
-        INSERT INTO usuario (idUsuario,CURP,nombre,apellidoPaterno,apellidoMaterno,fechaNacimiento,genero,matricula,contrasena)
-        VALUES(#{idUsuario},#{CURP},#{nombre},#{apellidoPaterno},#{apellidoMaterno},#{fechaNacimiento},#{genero},#{matricula},#{contrasena})
+        INSERT INTO usuario (CURP,nombre,apellidoPaterno,apellidoMaterno,fechaNacimiento,genero,matricula,contrasena)
+        VALUES(#{CURP},#{nombre},#{apellidoPaterno},#{apellidoMaterno},#{fechaNacimiento},#{genero},#{matricula},#{contrasena})
     </insert>
     
     <delete id="eliminarUsuario" parameterType="Integer">

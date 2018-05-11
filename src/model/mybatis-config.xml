@@ -9,8 +9,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
       <transactionManager type="JDBC"/>
       <dataSource type="POOLED" >
         <property name="driver" value="com.mysql.jdbc.Driver"/>
-        <!-- TODO: Nombre de Base de Datos -->
-<!--    <property name="url" value="jdbc:mysql://localhost:3306/contactos"/> -->
+        <property name="url" value="jdbc:mysql://localhost:3306/plataforma"/>
         <property name="username" value="root"/>
         <property name="password" value="1234"/>
         <property name="poolMaximumActiveConnections" value="50"/>
@@ -18,8 +17,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
     </environment>
   </environments>
   <mappers>
-    <!-- TODO: Registrar los mapper que se vayan a usar, siguiendo el ejemplo-->
-    <!-- <mapper resource="model/mapper/ContactoMapper.xml"/> -->
+    <mapper resource="model/mapper/CursoMapper.xml"/>
+    <mapper resource="model/mapper/UsuarioMapper.xml"/>
   </mappers>
 </configuration>
 

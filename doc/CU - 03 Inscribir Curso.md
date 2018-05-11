@@ -19,7 +19,10 @@ En este caso de uso, el Usuario se enrola en alguno de los cursos ofertados en e
 
 ### Flujo Normal:
 
-1. 
+1. El sistema obtiene de la base de daos los CURSO disponibles y los muestra ordenados por su categoría (ver Ex-3.1).
+2. El Usuario da click en una categoría
+3. El sistema muestra los CURSO asociados a esa categoría, ordenados por su nombre en otra lista.
+4. El Usuario da click en un
 
 ### Flujos Alternos
 
@@ -36,8 +39,8 @@ En este caso de uso, el Usuario se enrola en alguno de los cursos ofertados en e
 
 ### Postcondiciones
 
-- 
-
+- El sistema envía una solicitud de compra
+- El sistema registra al usuario en un grupo
 
 ### Include 
 

@@ -14,7 +14,10 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import model.pojos.Usuario;
 
 /**
  * 
@@ -26,6 +29,9 @@ import javafx.scene.layout.StackPane;
  */
 
 public class FXMLVistaCursosController implements Initializable {
+
+  // ==================================================================================================================
+  // Elementos de la Interfaz FXML
 
   @FXML
   private StackPane rootPane;
@@ -43,10 +49,13 @@ public class FXMLVistaCursosController implements Initializable {
   private JFXButton btnHamburger;
 
   @FXML
-  private JFXListView<?> listCourses;
+  private JFXListView<AnchorPane> listCourses;
 
   @FXML
-  private JFXListView<?> listCategories;
+  private JFXListView<Label> listCategories;
+
+  // ==================================================================================================================
+  // Recursos de la Base de Datos
 
   // ==================================================================================================================
   // Carga de GUI
@@ -60,6 +69,10 @@ public class FXMLVistaCursosController implements Initializable {
   @Override
   public void initialize(URL url, ResourceBundle rb) {
 
+  }
+
+  public void cargarUsuario(Usuario user) {
+    btnUser.setText(user.getNombre() + " " + user.getApellidoPaterno());
   }
 
   // ==================================================================================================================
@@ -84,5 +97,5 @@ public class FXMLVistaCursosController implements Initializable {
   void clickUser(ActionEvent event) {
     btnNotifCount.setVisible(true);
   }
-	
+
 }

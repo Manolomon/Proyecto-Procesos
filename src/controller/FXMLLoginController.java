@@ -15,6 +15,8 @@ import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.event.ActionEvent;
@@ -24,6 +26,9 @@ import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import model.dao.UsuarioDAO;
+import model.pojos.Login;
+import model.pojos.Usuario;
 
 /**
  * 
@@ -53,6 +58,13 @@ public class FXMLLoginController implements Initializable {
 
   @FXML
   private JFXPasswordField txtPassword;
+
+  // ==================================================================================================================
+  // Recursos de la Base de Datos
+
+  private Usuario usuario;
+
+  private Login datosIngresados;
 
   // ==================================================================================================================
   // Carga de GUI
@@ -87,17 +99,21 @@ public class FXMLLoginController implements Initializable {
   /**
    * Carga de la pantalla de Vista General de Cursos
    */
-  public void cargarEscenaVistaCursos() {
+  public void cargarEscenaVistaCursos(Usuario user) {
+    FXMLLoader loader = new FXMLLoader();
+    loader.setLocation(getClass().getResource("/view/FXMLVistaCursos.fxml"));
     try {
-      StackPane cursosView;
-      cursosView = FXMLLoader.load(getClass().getResource("/view/FXMLVistaCursos.fxml"));
-      Scene newScene = new Scene(cursosView);
-      Stage curStage = (Stage) rootPane.getScene().getWindow();
-      curStage.setScene(newScene);
-      curStage.show();
-    } catch (IOException e) {
-      System.out.println("No se enecontró: " + e);
+      loader.load();
+    } catch (IOException ex) {
+      Logger.getLogger(FXMLLoginController.class.getName()).log(Level.SEVERE, null, ex);
     }
+    FXMLVistaCursosController display = loader.getController();
+    display.cargarUsuario(user);
+    StackPane vistaCursos = loader.getRoot();
+    Scene newScene = new Scene(vistaCursos);
+    Stage curStage = (Stage) rootPane.getScene().getWindow();
+    curStage.setScene(newScene);
+    curStage.show();
   }
 
   // ==================================================================================================================
@@ -110,11 +126,17 @@ public class FXMLLoginController implements Initializable {
    */
   @FXML
   void clickSignIn(ActionEvent event) {
-    if (!camposIncompletos()) {
-      cargarEscenaVistaCursos();
-    } else {
-      showDialog("Campos incompletos", "Por favor llene todos los campos necesarios");
-    }
+    iniciarSesion();
+  }
+
+  /**
+   * Evento de ENTER en la caja de Texto de Contraseña
+   * 
+   * @param event Evento de click en txtPassword
+   */
+  @FXML
+  void enterPassword(ActionEvent event) {
+    iniciarSesion();
   }
 
   /**
@@ -131,6 +153,23 @@ public class FXMLLoginController implements Initializable {
   // Validación y Mensajes
 
   /**
+   * Método de Inicio de Sesión, con validación de datos
+   */
+  public void iniciarSesion() {
+    if (!camposIncompletos()) {
+      datosIngresados = new Login(txtUsuario.getText(), txtPassword.getText());
+      usuario = UsuarioDAO.obtenerUsuario(datosIngresados);
+      if (usuario != null) {
+        cargarEscenaVistaCursos(usuario);
+      } else {
+        showDialog("Usuario no registrado", "Revise su matrícula y su contraseña");
+      }
+    } else {
+      showDialog("Campos incompletos", "Por favor llene todos los campos necesarios");
+    }
+  }
+
+  /**
    * Verificación de que todos los campos necesarios esten llenos
    * 
    * @return Confirmación si los campos están vacíos
@@ -143,8 +182,8 @@ public class FXMLLoginController implements Initializable {
    * Inicialización y muestra de un JFXDialog al centro de la pantalla, mandando
    * una advertencia a alguna operación
    * 
-   * @param head  Título del dialog
-   * @param body  Texto principal del dialog
+   * @param head Título del dialog
+   * @param body Texto principal del dialog
    */
   public void showDialog(String head, String body) {
     JFXDialogLayout content = new JFXDialogLayout();

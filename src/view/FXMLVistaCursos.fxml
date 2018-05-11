@@ -55,7 +55,7 @@
                         <Font name="Futura Medium" size="16.0" />
                      </font>
                   </JFXButton>
-                  <JFXTextField focusColor="#86bd01" layoutX="290.0" layoutY="7.0" prefHeight="34.0" prefWidth="272.0" promptText="Buscar" style="-fx-prompt-text-fill: ffffff; -fx-text-fill: ffffff;" unFocusColor="WHITE">
+                  <JFXTextField focusColor="#fdc502" layoutX="290.0" layoutY="7.0" prefHeight="34.0" prefWidth="272.0" promptText="Buscar" style="-fx-prompt-text-fill: ffffff; -fx-text-fill: ffffff;" unFocusColor="WHITE">
                      <font>
                         <Font name="Futura Medium" size="16.0" />
                      </font>
@@ -75,7 +75,7 @@
                   <DropShadow />
                </effect>
             </JFXListView>
-            <Label layoutX="25.0" layoutY="65.0" prefHeight="54.0" prefWidth="257.0" text="Categorias" textAlignment="CENTER" textFill="#86bd01">
+            <Label layoutX="25.0" layoutY="65.0" prefHeight="54.0" prefWidth="257.0" text="Categorias" textAlignment="CENTER" textFill="#fdc502">
                <font>
                   <Font name="Futura Bold" size="30.0" />
                </font>
