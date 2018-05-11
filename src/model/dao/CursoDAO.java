@@ -64,6 +64,23 @@ public class CursoDAO {
         return lista;
     }
     
+    public static List<String> obtenerCategorias()
+    {
+        List<String> lista = new ArrayList<String>();
+        SqlSession conn = null;
+        try{
+            conn = MyBatisUtils.getSession();
+            lista = conn.selectList("Curso.obtenerCategorias");
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally{
+            if(conn!=null){
+                conn.close();
+            }
+        }
+        return lista;
+    }
+    
     public static Curso obtenerCurso(String nombre)
     {
         Curso curso = new Curso();

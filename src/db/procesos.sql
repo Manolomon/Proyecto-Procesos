@@ -30,7 +30,7 @@ CREATE TABLE Usuario (
 CREATE TABLE Curso (
     idCurso int NOT NULL auto_increment,
     nombre varchar(150),
-    categoria varchar(100),
+    idCategoria int,
     precio double,
     fechaInicio date,
     fechaFin date,
@@ -55,6 +55,11 @@ CREATE TABLE Pago (
     PRIMARY KEY (idPago)
 );
 
+CREATE TABLE Categoria (
+    idCategoria int NOT NULL auto_increment,
+    nombre varchar(100)
+);
+
 ALTER TABLE Grupo ADD CONSTRAINT
     fk_grupo foreign key (idCurso)
     REFERENCES Curso (idCurso);
@@ -67,6 +72,10 @@ ALTER TABLE Pago ADD CONSTRAINT
     fk_pago2 foreign key (idGrupo)
     REFERENCES Grupo (idGrupo);
 
+ALTER TABLE Curso ADD CONSTRAINT
+    fk_curso foreign key (idCategoria)
+    REFERENCES Categoria (idCategoria);
+
 INSERT INTO usuario (idUsuario,CURP,nombre,apellidoPaterno,apellidoMaterno,fechaNacimiento,genero,matricula,contrasena)
     VALUES(NULL, "1221", "Manolo", "Pérez", "Verdejo", '1998-03-13', "Hombre", "zS16011702", "1234");
 
@@ -76,14 +85,19 @@ INSERT INTO usuario (idUsuario,CURP,nombre,apellidoPaterno,apellidoMaterno,fecha
 INSERT INTO usuario (idUsuario,CURP,nombre,apellidoPaterno,apellidoMaterno,fechaNacimiento,genero,matricula,contrasena)
     VALUES(NULL, "765237325", "Daniela", "Hernández", "Valenzuela", '1998-08-20', "Mujer", "zS16011678", "4321");
 
-INSERT INTO curso (nombre,categoria,precio,fechaInicio,fechaFin,imagen)
-    VALUES("Cálculo", "Matemáticas", 135, '2018-03-13', '2018-04-02', "/resources/Cursos/1.jpg");
+INSERT INTO categoria (nombre)
+    VALUES("Matemáticas"),
+    ("Economia"),
+    ("Salud");
 
 INSERT INTO curso (nombre,categoria,precio,fechaInicio,fechaFin,imagen)
-    VALUES("Estadística", "Matemáticas", 350, '2018-03-13', '2018-04-02', "/resources/Cursos/Estadistica.jpg");
+    VALUES("Cálculo", 1, 135, '2018-03-13', '2018-04-02', "/resources/Cursos/1.jpg");
 
 INSERT INTO curso (nombre,categoria,precio,fechaInicio,fechaFin,imagen)
-    VALUES("Economia", "Economia", 350, '2018-03-13', '2018-04-02', "/resources/Cursos/Economia.jpg");
+    VALUES("Estadística", 1, 350, '2018-03-13', '2018-04-02', "/resources/Cursos/Estadistica.jpg");
 
 INSERT INTO curso (nombre,categoria,precio,fechaInicio,fechaFin,imagen)
-    VALUES("Primeros Auxilios", "Salud", 249, '2018-03-13', '2018-04-02', "/resources/Cursos/Salud.png");
+    VALUES("Economia", 2, 350, '2018-03-13', '2018-04-02', "/resources/Cursos/Economia.jpg");
+
+INSERT INTO curso (nombre,categoria,precio,fechaInicio,fechaFin,imagen)
+    VALUES("Primeros Auxilios", 3, 249, '2018-03-13', '2018-04-02', "/resources/Cursos/Salud.png");

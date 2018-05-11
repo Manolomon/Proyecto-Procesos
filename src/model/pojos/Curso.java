@@ -16,7 +16,7 @@ import java.sql.Date;
 public class Curso {
     private Integer idCurso;
     private String nombre;
-    private String categoria;
+    private Integer idCategoria;
     private Double precio;
     private Date fechaInicio;
     private Date fechaFin;
@@ -25,10 +25,10 @@ public class Curso {
     public Curso() {
     }
 
-    public Curso(Integer idCurso, String nombre, String categoria, Double precio, Date fechaInicio, Date fechaFin, String imagen) {
+    public Curso(Integer idCurso, String nombre, Integer idCategoria, Double precio, Date fechaInicio, Date fechaFin, String imagen) {
         this.idCurso = idCurso;
         this.nombre = nombre;
-        this.categoria = categoria;
+        this.idCategoria = idCategoria;
         this.precio = precio;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
@@ -51,12 +51,12 @@ public class Curso {
         this.nombre = nombre;
     }
 
-    public String getCategoria() {
-        return categoria;
+    public Integer getCategoria() {
+        return idCategoria;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setCategoria(Integer idCategoria) {
+        this.idCategoria = idCategoria;
     }
 
     public Double getPrecio() {
