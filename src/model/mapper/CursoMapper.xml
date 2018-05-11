@@ -13,16 +13,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </select>
     
     <select id="obtenerAllCursosDeCategoria" resultType="model.pojos.Curso" parameterType="String">
-        SELECT * FROM curso WHERE categoria = #{categoria}
+        SELECT * FROM curso WHERE categoria = #{categoria} ORDER BY nombre
     </select>
     
-    <select id="obtenerCurso" resultType="model.pojos.Curso" parameterType="Integer">
-        SELECT * FROM curso WHERE idCurso = #{idCurso}
+    <select id="obtenerCurso" resultType="model.pojos.Curso" parameterType="String">
+        SELECT * FROM curso WHERE nombre = #{nombre}
     </select>    
     
      <insert id="registrarCurso" parameterType="model.pojos.Curso">
-        INSERT INTO curso (idCurso,nombre,categoria,precio,fechaInicio,fechaFin,imagen)
-        VALUES(#{idCurso},#{nombre},#{categoria},#{precio},#{fechaInicio},#{fechaFin},#{imagen})
+        INSERT INTO curso (nombre,categoria,precio,fechaInicio,fechaFin,imagen)
+        VALUES(#{nombre},#{categoria},#{precio},#{fechaInicio},#{fechaFin},#{imagen})
     </insert>
     
     <delete id="eliminarCurso" parameterType="Integer">

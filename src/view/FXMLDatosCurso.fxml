@@ -5,36 +5,35 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="590.0" minHeight="-Infinity" minWidth="590.0" prefHeight="113.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="590.0" minHeight="-Infinity" minWidth="590.0" prefHeight="135.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLDatosCursoController">
    <children>
-      <ImageView fitHeight="87.0" fitWidth="172.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageCurso" fitHeight="105.0" fitWidth="172.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="203.0" layoutY="15.0" prefHeight="25.0" prefWidth="54.0" text="Curso:">
          <font>
             <Font name="Futura Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="274.0" layoutY="15.0" prefHeight="25.0" prefWidth="294.0" text="Principios de diseño">
+      <Label fx:id="lblNombre" layoutX="274.0" layoutY="15.0" prefHeight="25.0" prefWidth="294.0" text="Principios de diseño">
          <font>
             <Font name="Futura Medium" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="203.0" layoutY="48.0" prefHeight="25.0" prefWidth="79.0" text="Profesor:">
+      <Label fx:id="lblProfesor" layoutX="203.0" layoutY="55.0" prefHeight="25.0" prefWidth="79.0" text="Profesor:">
          <font>
             <Font name="Futura Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="278.0" layoutY="48.0" prefHeight="25.0" prefWidth="294.0" text="Maria Karen Cortes Verdin">
+      <Label fx:id="lblProfesor" layoutX="278.0" layoutY="55.0" prefHeight="25.0" prefWidth="294.0" text="Maria Karen Cortes Verdin">
          <font>
             <Font name="Futura Medium" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="203.0" layoutY="76.0" prefHeight="25.0" prefWidth="128.0" text="Costo:">
+      <Label layoutX="203.0" layoutY="96.0" prefHeight="25.0" prefWidth="128.0" text="Costo:">
          <font>
             <Font name="Futura Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="278.0" layoutY="76.0" prefHeight="25.0" prefWidth="294.0" text="\$500 MX">
+      <Label fx:id="lblPrecio" layoutX="278.0" layoutY="96.0" prefHeight="25.0" prefWidth="294.0" text="\$500 MX">
          <font>
             <Font name="Futura Medium" size="14.0" />
          </font>

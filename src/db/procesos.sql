@@ -31,6 +31,9 @@ CREATE TABLE Curso (
     idCurso int NOT NULL auto_increment,
     nombre varchar(150),
     categoria varchar(100),
+    profesor varchar(60),
+    descripcion text,
+    requisitos text,
     precio double,
     fechaInicio date,
     fechaFin date,
@@ -75,3 +78,12 @@ INSERT INTO usuario (idUsuario,CURP,nombre,apellidoPaterno,apellidoMaterno,fecha
 
 INSERT INTO usuario (idUsuario,CURP,nombre,apellidoPaterno,apellidoMaterno,fechaNacimiento,genero,matricula,contrasena)
     VALUES(NULL, "765237325", "Daniela", "Hernández", "Valenzuela", '1998-08-20', "Mujer", "zS16011678", "4321");
+
+INSERT INTO curso (nombre,categoria,precio,fechaInicio,fechaFin,imagen)
+    VALUES("Cálculo", "Matemáticas", 135, '2018-03-13', '2018-04-02', "/resources/Cursos/1.jpg");
+
+INSERT INTO curso (nombre,categoria,precio,fechaInicio,fechaFin,imagen)
+    VALUES("Geometría Analítica", "Matemáticas", 135, '2018-03-13', '2018-04-02', "/resources/Cursos/1.jpg");
+
+INSERT INTO curso (nombre,categoria,precio,fechaInicio,fechaFin,imagen)
+    VALUES("Español Antiguo", "Literatura", 135, '2018-03-13', '2018-04-02', "/resources/Cursos/1.jpg");

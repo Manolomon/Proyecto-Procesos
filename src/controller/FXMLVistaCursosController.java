@@ -9,14 +9,27 @@ package controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
+import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+import model.dao.CursoDAO;
+import model.pojos.Curso;
 import model.pojos.Usuario;
 
 /**
@@ -57,6 +70,12 @@ public class FXMLVistaCursosController implements Initializable {
   // ==================================================================================================================
   // Recursos de la Base de Datos
 
+  private Usuario user;
+
+  private ArrayList<String> categorias = new ArrayList<>();
+
+  private List<Curso> cursos;
+
   // ==================================================================================================================
   // Carga de GUI
 
@@ -68,11 +87,88 @@ public class FXMLVistaCursosController implements Initializable {
    */
   @Override
   public void initialize(URL url, ResourceBundle rb) {
+    cargarCategorias();
+    //cargarCursos(null);
+  }
 
+  /**
+   * Carga de la pantalla de Login
+   */
+  public void cargarEscenaLogin() {
+    try {
+      StackPane registroView;
+      registroView = FXMLLoader.load(getClass().getResource("/view/FXMLLogin.fxml"));
+      Scene newScene = new Scene(registroView);
+      Stage curStage = (Stage) rootPane.getScene().getWindow();
+      curStage.setScene(newScene);
+      curStage.show();
+    } catch (IOException e) {
+      System.out.println("No se enecontró: " + e);
+    }
+  }
+
+  public void cargarVistaIndividual(Curso curso) {
+    FXMLLoader loader = new FXMLLoader();
+    loader.setLocation(getClass().getResource("/view/FXMLVistaCursoIndividual.fxml"));
+    try {
+      loader.load();
+    } catch (IOException ex) {
+      Logger.getLogger(FXMLVistaCursosController.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    FXMLVistaCursoIndividualController display = loader.getController();
+    display.asignarDatos(curso);
+    StackPane agregarView = loader.getRoot();
+    Scene newScene = new Scene(agregarView);
+    Stage curStage = (Stage) rootPane.getScene().getWindow();
+    curStage.setScene(newScene);
+    curStage.show();
   }
 
   public void cargarUsuario(Usuario user) {
     btnUser.setText(user.getNombre() + " " + user.getApellidoPaterno());
+    this.user = user;
+  }
+
+  public void cargarCategorias() {
+    listCategories.getItems().clear();
+    cursos = CursoDAO.obtenerAllCursosOrdenados();
+    if (cursos != null) {
+      String categoria = cursos.get(0).getCategoria();
+      String iteracion = categoria;
+      for (Curso curso : cursos) {
+        iteracion = curso.getCategoria();
+        if (!categoria.equals(iteracion)) {
+          categoria = curso.getCategoria();
+        } else {
+          categorias.add(curso.getCategoria());
+          try {
+            Label lbl = new Label(curso.getCategoria());
+            lbl.setGraphic(new ImageView(new Image(getClass().getResourceAsStream("/resources/Book.png"))));
+            listCategories.getItems().add(lbl);
+          } catch (Exception ex) {
+            System.err.println("Error: " + ex);
+          }
+        }
+      }
+    }
+  }
+
+  public void cargarCursos(String categoria) {
+    listCourses.getItems().clear();
+    cursos = CursoDAO.obtenerAllCursosDeCategoria(categoria);
+    for(Curso curso : cursos) {
+      FXMLLoader loader = new FXMLLoader();
+      loader.setLocation(getClass().getResource("/view/FXMLDatosCurso.fxml"));
+      try {
+        loader.load();
+      } catch (IOException ex) {
+        Logger.getLogger(FXMLVistaCursosController.class.getName()).log(Level.SEVERE, null, ex);
+      }
+      FXMLDatosCursoController display = loader.getController();
+      AnchorPane p = loader.getRoot();
+      display.asignarDatos(curso);
+      listCourses.getItems().add(p);
+    }
   }
 
   // ==================================================================================================================
@@ -95,7 +191,18 @@ public class FXMLVistaCursosController implements Initializable {
    */
   @FXML
   void clickUser(ActionEvent event) {
-    btnNotifCount.setVisible(true);
+    //btnNotifCount.setVisible(true);
+    cargarEscenaLogin();
+  }
+
+  @FXML
+  void clickListCategories(MouseEvent event) {
+    cargarCursos(categorias.get(listCategories.getSelectionModel().getSelectedIndex()));
+  }
+
+  @FXML
+  void clickListCourses(MouseEvent event) {
+    cargarVistaIndividual(cursos.get(listCourses.getSelectionModel().getSelectedIndex()));
   }
 
 }

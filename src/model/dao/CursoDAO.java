@@ -64,13 +64,13 @@ public class CursoDAO {
         return lista;
     }
     
-    public static Curso obtenerCurso(Integer id)
+    public static Curso obtenerCurso(String nombre)
     {
         Curso curso = new Curso();
         SqlSession conn = null;
         try{
             conn = MyBatisUtils.getSession();
-            curso = conn.selectOne("Curso.obtenerCurso",id);
+            curso = conn.selectOne("Curso.obtenerCurso",nombre);
         }catch(Exception ex){
             ex.printStackTrace();
         }finally{
