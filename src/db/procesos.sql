@@ -78,3 +78,12 @@ INSERT INTO usuario (idUsuario,CURP,nombre,apellidoPaterno,apellidoMaterno,fecha
 
 INSERT INTO curso (nombre,categoria,precio,fechaInicio,fechaFin,imagen)
     VALUES("Cálculo", "Matemáticas", 135, '2018-03-13', '2018-04-02', "/resources/Cursos/1.jpg");
+
+INSERT INTO curso (nombre,categoria,precio,fechaInicio,fechaFin,imagen)
+    VALUES("Estadística", "Matemáticas", 350, '2018-03-13', '2018-04-02', "/resources/Cursos/Estadistica.jpg");
+
+INSERT INTO curso (nombre,categoria,precio,fechaInicio,fechaFin,imagen)
+    VALUES("Economia", "Economia", 350, '2018-03-13', '2018-04-02', "/resources/Cursos/Economia.jpg");
+
+INSERT INTO curso (nombre,categoria,precio,fechaInicio,fechaFin,imagen)
+    VALUES("Primeros Auxilios", "Salud", 249, '2018-03-13', '2018-04-02', "/resources/Cursos/Salud.png");
