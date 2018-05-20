@@ -86,7 +86,7 @@
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0">
                            <image>
-                              <Image url="@../../../../../../../var/folders/xn/8rrqyrqn1f5b2x4tmdjjj_gw0000gn/T/com.iconjar.iconjar.pasteboard/1526047546/Arrow%20Left.png" />
+                              <Image url="@../resources/Arrow%20Left.png" />
                            </image>
                         </ImageView>
                      </graphic>

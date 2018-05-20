@@ -24,7 +24,7 @@
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0">
                            <image>
-                              <Image url="@../resources/User.png" />
+                              <Image url="@../resources/Profile.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -43,11 +43,11 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton fx:id="btnHamburger" layoutX="-4.0" layoutY="1.0" prefHeight="48.0" prefWidth="152.0" text="Categorias" textFill="WHITE">
+                  <JFXButton fx:id="btnHamburger" layoutX="-4.0" layoutY="1.0" prefHeight="48.0" prefWidth="110.0" text="Menu" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0">
                            <image>
-                              <Image url="@../resources/GRID.png" />
+                              <Image url="@../resources/Menu.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -75,7 +75,7 @@
                   <DropShadow />
                </effect>
             </JFXListView>
-            <Label layoutX="25.0" layoutY="65.0" prefHeight="54.0" prefWidth="257.0" text="Categorias" textAlignment="CENTER" textFill="#fdc502">
+            <Label layoutX="25.0" layoutY="65.0" prefHeight="54.0" prefWidth="257.0" text="Categorias" textAlignment="CENTER" textFill="#fa5130">
                <font>
                   <Font name="Futura Bold" size="30.0" />
                </font>
