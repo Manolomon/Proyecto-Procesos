@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="570.0" maxWidth="-Infinity" minHeight="570.0" minWidth="-Infinity" prefHeight="570.0" prefWidth="194.0" style="-fx-background-color: #282c36;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefHeight="570.0" prefWidth="194.0">
+         <children>
+            <AnchorPane prefHeight="112.0" prefWidth="194.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #fa5130, #dd2476);">
+               <children>
+                  <Label layoutX="81.0" layoutY="46.0" text="Estudiante" textFill="#fdc502">
+                     <font>
+                        <Font name="Futura Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="5.0" layoutY="19.0">
+                     <image>
+                        <Image url="@../resources/User.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </AnchorPane>
+            <JFXButton prefHeight="60.0" prefWidth="194.0" text="Ver mis cursos" textFill="WHITE">
+               <font>
+                  <Font name="Futura Medium" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton prefHeight="60.0" prefWidth="194.0" text="Ver catálogo" textFill="WHITE">
+               <font>
+                  <Font name="Futura Medium" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton prefHeight="60.0" prefWidth="194.0" text="Configurar cuenta" textFill="WHITE">
+               <font>
+                  <Font name="Futura Medium" size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
