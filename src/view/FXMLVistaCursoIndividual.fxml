@@ -25,7 +25,7 @@
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0">
                            <image>
-                              <Image url="@../resources/User.png" />
+                              <Image url="@../resources/Profile.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -39,16 +39,16 @@
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0">
                            <image>
-                              <Image url="@../resources/Inbox.png" />
+                              <Image url="@../../../../../../../var/folders/xn/8rrqyrqn1f5b2x4tmdjjj_gw0000gn/T/com.iconjar.iconjar.pasteboard/1526839179/Inbox.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton layoutX="-4.0" layoutY="1.0" prefHeight="48.0" prefWidth="150.0" text="Categorias" textFill="WHITE">
+                  <JFXButton layoutX="-4.0" layoutY="1.0" prefHeight="48.0" prefWidth="106.0" text="Menu" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0">
                            <image>
-                              <Image url="@../resources/GRID.png" />
+                              <Image url="@../../../../../../../var/folders/xn/8rrqyrqn1f5b2x4tmdjjj_gw0000gn/T/com.iconjar.iconjar.pasteboard/1526839198/Menu.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -61,7 +61,7 @@
                   <DropShadow height="18.0" radius="8.5" width="18.0" />
                </effect>
             </AnchorPane>
-            <Label fx:id="lblNombre" layoutX="30.0" layoutY="100.0" prefHeight="54.0" prefWidth="586.0" text="Principios de diseño" textAlignment="CENTER" textFill="#f14345">
+            <Label fx:id="lblNombre" layoutX="30.0" layoutY="100.0" prefHeight="54.0" prefWidth="586.0" text="Principios de diseño" textAlignment="CENTER" textFill="#fa5130">
                <font>
                   <Font name="Futura Bold" size="30.0" />
                </font>
@@ -147,7 +147,7 @@
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0">
                      <image>
-                        <Image url="@../resources/Arrow%20Left.png" />
+                        <Image url="@../../../../../../../var/folders/xn/8rrqyrqn1f5b2x4tmdjjj_gw0000gn/T/com.iconjar.iconjar.pasteboard/1526839098/Arrow%20Left.png" />
                      </image>
                   </ImageView>
                </graphic>

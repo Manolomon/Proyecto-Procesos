@@ -42,6 +42,11 @@
                   <Font name="Futura Bold" size="15.0" />
                </font>
             </JFXButton>
+            <JFXButton prefHeight="60.0" prefWidth="200.0" text="Ver solicitudes" textFill="WHITE">
+               <font>
+                  <Font name="Futura Bold" size="15.0" />
+               </font>
+            </JFXButton>
          </children>
       </VBox>
    </children>
