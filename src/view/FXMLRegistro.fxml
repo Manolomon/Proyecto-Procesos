@@ -23,55 +23,48 @@
                   <DropShadow />
                </effect>
                <children>
-                  <JFXPasswordField fx:id="txtPassword" focusColor="#fdc502" labelFloat="true" layoutX="24.0" layoutY="337.0" prefHeight="27.0" prefWidth="350.0" promptText="Contraseña" styleClass="jfx-text-field" stylesheets="@styles.css">
+                  <JFXPasswordField fx:id="txtPassword" focusColor="#dd2476" labelFloat="true" layoutX="24.0" layoutY="337.0" prefHeight="34.0" prefWidth="320.0" promptText="Contraseña" stylesheets="@styles.css">
                      <font>
                         <Font name="Futura Medium" size="16.0" />
                      </font>
                   </JFXPasswordField>
-                  <JFXPasswordField fx:id="txtConfirmacion" focusColor="#fdc502" labelFloat="true" layoutX="24.0" layoutY="402.0" prefHeight="27.0" prefWidth="350.0" promptText="Repite tu contraseña" styleClass="jfx-text-field" stylesheets="@styles.css">
+                  <JFXPasswordField fx:id="txtConfirmacion" focusColor="#dd2476" labelFloat="true" layoutX="385.0" layoutY="337.0" prefHeight="34.0" prefWidth="320.0" promptText="Repite tu contraseña" styleClass="jfx-text-field" stylesheets="@styles.css">
                      <font>
                         <Font name="Futura Medium" size="16.0" />
                      </font>
                   </JFXPasswordField>
-                  <JFXTextField fx:id="txtNombre" focusColor="#fdc502" labelFloat="true" layoutX="24.0" layoutY="76.0" promptText="Nombre" styleClass="jfx-text-field" stylesheets="@styles.css">
+                  <JFXTextField fx:id="txtNombre" focusColor="#dd2476" labelFloat="true" layoutX="24.0" layoutY="76.0" promptText="Nombre" styleClass="jfx-text-field" stylesheets="@styles.css">
                      <font>
                         <Font name="Futura Medium" size="16.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField fx:id="txtApPaterno" focusColor="#fdc502" labelFloat="true" layoutX="265.0" layoutY="76.0" promptText="Apellido Paterno" styleClass="jfx-text-field" stylesheets="@styles.css">
+                  <JFXTextField fx:id="txtApPaterno" focusColor="#dd2476" labelFloat="true" layoutX="265.0" layoutY="76.0" promptText="Apellido Paterno" styleClass="jfx-text-field" stylesheets="@styles.css">
                      <font>
                         <Font name="Futura Medium" size="16.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField fx:id="txtApMaterno" focusColor="#fdc502" labelFloat="true" layoutX="504.0" layoutY="76.0" promptText="Apellido Materno" styleClass="jfx-text-field" stylesheets="@styles.css">
+                  <JFXTextField fx:id="txtApMaterno" focusColor="#dd2476" labelFloat="true" layoutX="504.0" layoutY="76.0" promptText="Apellido Materno" styleClass="jfx-text-field" stylesheets="@styles.css">
                      <font>
                         <Font name="Futura Medium" size="16.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField fx:id="txtCurp" focusColor="#fdc502" labelFloat="true" layoutX="24.0" layoutY="138.0" prefHeight="34.0" prefWidth="374.0" promptText="CURP" styleClass="jfx-text-field" stylesheets="@styles.css">
+                  <JFXTextField fx:id="txtCurp" focusColor="#dd2476" labelFloat="true" layoutX="24.0" layoutY="138.0" prefHeight="34.0" prefWidth="374.0" promptText="CURP" styleClass="jfx-text-field" stylesheets="@styles.css">
                      <font>
                         <Font name="Futura Medium" size="16.0" />
                      </font>
                   </JFXTextField>
-                  <JFXDatePicker fx:id="dateFechaNacimiento" defaultColor="#fdc502" layoutX="425.0" layoutY="145.0" prefHeight="27.0" prefWidth="287.0" promptText="Fecha de nacimiento" />
-                  <JFXTextField fx:id="txtUsuario" focusColor="#fdc502" labelFloat="true" layoutX="24.0" layoutY="273.0" prefHeight="29.0" prefWidth="350.0" promptText="Usuario" styleClass="jfx-text-field" stylesheets="@styles.css">
+                  <JFXDatePicker fx:id="dateFechaNacimiento" defaultColor="#dd2476" layoutX="425.0" layoutY="145.0" prefHeight="27.0" prefWidth="287.0" promptText="Fecha de nacimiento" />
+                  <JFXTextField fx:id="txtUsuario" focusColor="#dd2476" labelFloat="true" layoutX="24.0" layoutY="273.0" prefHeight="34.0" prefWidth="320.0" promptText="Usuario" styleClass="jfx-text-field" stylesheets="@styles.css">
                      <font>
                         <Font name="Futura Medium" size="16.0" />
                      </font>
                   </JFXTextField>
-                  <JFXButton fx:id="btnSignUp" layoutX="579.0" layoutY="21.0" onAction="#clickSignUp" text="Registrar">
-                     <graphic>
-                        <ImageView fitHeight="20.0" fitWidth="20.0">
-                           <image>
-                              <Image url="@../resources/Checkmark.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
+                  <JFXButton fx:id="btnSignUp" layoutX="582.0" layoutY="414.0" onAction="#clickSignUp" style="-fx-background-color: linear-gradient( #fa5130, #dd2476); -fx-background-radius: 10;" text="Registrar" textFill="WHITE">
                      <font>
-                        <Font name="Futura Bold" size="16.0" />
+                        <Font name="Futura Bold" size="18.0" />
                      </font>
                   </JFXButton>
-                  <JFXRadioButton fx:id="rbtnHombre" layoutX="166.0" layoutY="226.0" prefHeight="18.0" prefWidth="107.0" style="-jfx-selected-color: #fdc502;" text="Hombre">
+                  <JFXRadioButton fx:id="rbtnHombre" layoutX="166.0" layoutY="226.0" prefHeight="18.0" prefWidth="107.0" style="-jfx-selected-color: #dd2476;" text="Hombre">
                      <font>
                         <Font name="Futura Medium" size="16.0" />
                      </font>
@@ -79,7 +72,7 @@
                         <ToggleGroup fx:id="grupoGenero" />
                      </toggleGroup>
                   </JFXRadioButton>
-                  <JFXRadioButton fx:id="rbtnMujer" layoutX="43.0" layoutY="226.0" prefHeight="18.0" prefWidth="99.0" style="-jfx-selected-color: #fdc502;" text="Mujer" toggleGroup="$grupoGenero">
+                  <JFXRadioButton fx:id="rbtnMujer" layoutX="43.0" layoutY="226.0" prefHeight="18.0" prefWidth="99.0" style="-jfx-selected-color: #dd2476;" text="Mujer" toggleGroup="$grupoGenero">
                      <font>
                         <Font name="Futura Medium" size="16.0" />
                      </font>
@@ -93,7 +86,7 @@
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0">
                            <image>
-                              <Image url="@../resources/Arrow%20Left.png" />
+                              <Image url="@../../../../../../../var/folders/xn/8rrqyrqn1f5b2x4tmdjjj_gw0000gn/T/com.iconjar.iconjar.pasteboard/1526047546/Arrow%20Left.png" />
                            </image>
                         </ImageView>
                      </graphic>

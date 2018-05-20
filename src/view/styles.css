@@ -7,6 +7,6 @@
 
 jfx-text-field, jfx-password-field {
     /*-fx-prompt-text-fill: WHITE;*/
-    -jfx-focus-color: -fx-primary-color;
+    -jfx-focus-color: -fx-tertiary-color;
     -jfx-unfocus-color: -fx-secondary-color;
 }
