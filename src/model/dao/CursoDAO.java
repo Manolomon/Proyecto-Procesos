@@ -8,6 +8,7 @@ package model.dao;
 import java.util.ArrayList;
 import java.util.List;
 import model.MyBatisUtils;
+import model.pojos.Categoria;
 import model.pojos.Curso;
 import model.pojos.Grupo;
 import org.apache.ibatis.session.SqlSession;
@@ -47,7 +48,7 @@ public class CursoDAO {
         return lista;
     }
     
-    public static List<Curso> obtenerAllCursosDeCategoria(String cat)
+    public static List<Curso> obtenerAllCursosDeCategoria(Categoria cat)
     {
         List<Curso> lista = new ArrayList<Curso>();
         SqlSession conn = null;

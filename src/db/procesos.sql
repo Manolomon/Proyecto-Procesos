@@ -1,4 +1,4 @@
-/*
+ /*
  * Procesos.sql
  *
  * Copyright (c) 2018, Royal Mango Developers
@@ -35,6 +35,7 @@ CREATE TABLE Curso (
     fechaInicio date,
     fechaFin date,
     imagen varchar(300),
+    idMaestro int,
     PRIMARY KEY (idCurso)
 );
 
@@ -61,6 +62,14 @@ CREATE TABLE Categoria (
     PRIMARY KEY (idCategoria)
 );
 
+CREATE TABLE Maestro (
+    idMaestro int NOT NULL auto_increment,
+    usuario varchar(50),
+    contrasena varchar(20),
+    nombre varchar(150),
+    PRIMARY KEY (idMaestro)
+);
+
 ALTER TABLE Grupo ADD CONSTRAINT
     fk_grupo foreign key (idCurso)
     REFERENCES Curso (idCurso);
@@ -76,6 +85,10 @@ ALTER TABLE Pago ADD CONSTRAINT
 ALTER TABLE Curso ADD CONSTRAINT
     fk_curso foreign key (idCategoria)
     REFERENCES Categoria (idCategoria);
+
+ALTER TABLE Curso ADD CONSTRAINT
+    fk_maestro foreign key (idMaestro)
+    REFERENCES Maestro (idMaestro);
 
 INSERT INTO usuario (idUsuario,CURP,nombre,apellidoPaterno,apellidoMaterno,fechaNacimiento,genero,matricula,contrasena)
     VALUES(NULL, "1221", "Manolo", "Pérez", "Verdejo", '1998-03-13', "Hombre", "zS16011702", "1234");

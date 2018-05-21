@@ -12,12 +12,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         SELECT * FROM curso ORDER BY categoria
     </select>
     
-    <select id="obtenerAllCursosDeCategoria" resultType="model.pojos.Curso" parameterType="String">
-        SELECT * FROM curso WHERE categoria = #{categoria} ORDER BY nombre
+    <select id="obtenerAllCursosDeCategoria" resultType="model.pojos.Curso" parameterType="model.pojos.Categoria">
+        SELECT * FROM curso WHERE idcategoria = #{idcategoria} ORDER BY nombre
     </select>
     
     <select id="obtenerCategorias" resultType="String">
-        SELECT nombre FROM categorian ORDER BY nombre
+        SELECT nombre FROM categoria ORDER BY nombre
     </select>
     
     <select id="obtenerCurso" resultType="model.pojos.Curso" parameterType="String">

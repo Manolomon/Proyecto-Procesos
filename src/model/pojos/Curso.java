@@ -21,11 +21,12 @@ public class Curso {
     private Date fechaInicio;
     private Date fechaFin;
     private String imagen;
+    private Integer idMaestro;
 
     public Curso() {
     }
 
-    public Curso(Integer idCurso, String nombre, Integer idCategoria, Double precio, Date fechaInicio, Date fechaFin, String imagen) {
+    public Curso(Integer idCurso, String nombre, Integer idCategoria, Double precio, Date fechaInicio, Date fechaFin, String imagen, Integer idmaestro) {
         this.idCurso = idCurso;
         this.nombre = nombre;
         this.idCategoria = idCategoria;
@@ -33,6 +34,7 @@ public class Curso {
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.imagen = imagen;
+        this.idMaestro = idmaestro;
     }
         
     public Integer getIdCurso() {
@@ -49,14 +51,6 @@ public class Curso {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public Integer getCategoria() {
-        return idCategoria;
-    }
-
-    public void setCategoria(Integer idCategoria) {
-        this.idCategoria = idCategoria;
     }
 
     public Double getPrecio() {
@@ -89,6 +83,22 @@ public class Curso {
 
     public void setImagen(String imagen) {
         this.imagen = imagen;
+    }
+
+    public Integer getIdCategoria() {
+        return idCategoria;
+    }
+
+    public void setIdCategoria(Integer idCategoria) {
+        this.idCategoria = idCategoria;
+    }
+
+    public Integer getIdMaestro() {
+        return idMaestro;
+    }
+
+    public void setIdMaestro(Integer idMaestro) {
+        this.idMaestro = idMaestro;
     }
     
     
