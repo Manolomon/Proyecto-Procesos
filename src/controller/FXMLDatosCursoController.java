@@ -8,13 +8,16 @@
 package controller;
 
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import model.dao.CursoDAO;
 import model.pojos.Curso;
+import model.pojos.Maestro;
 
 /**
  * @author Manolo Pérez
@@ -51,9 +54,10 @@ public class FXMLDatosCursoController implements Initializable {
     lblNombre.setText(curso.getNombre());
     Image image = new Image(getClass().getResource(curso.getImagen()).toExternalForm());
     imageCurso.setImage(image);
-    // TODO: lblProfesor.setText(curso.getProfesor());
-    lblProfesor.setText("Manolo Pérez");
-    lblPrecio.setText("$ " + curso.getPrecio().toString() + " MXN");
+    Maestro maestro = CursoDAO.obtenerMaestroCurso(curso.getIdMaestro());
+    lblProfesor.setText(maestro.getNombre());
+    DecimalFormat df = new DecimalFormat("#.00");
+    lblPrecio.setText("$ " + df.format(curso.getPrecio()) + " MXN");
   }
   
 }

@@ -26,7 +26,7 @@ public class Procesos extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/view/FXMLLogin.fxml"));
-        stage.setTitle("Plataforma de Gstión del Aprendizaje");
+        stage.setTitle("Plataforma de Gestión del Aprendizaje");
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/view/styles.css").toExternalForm());
 

@@ -13,18 +13,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </select>
     
     <select id="obtenerAllCursosDeCategoria" resultType="model.pojos.Curso" parameterType="model.pojos.Categoria">
-        SELECT * FROM curso WHERE idcategoria = #{idcategoria} ORDER BY nombre
+        SELECT * FROM curso WHERE idcategoria = #{idCategoria} ORDER BY nombre
     </select>
     
-    <select id="obtenerCategorias" resultType="String">
-        SELECT nombre FROM categoria ORDER BY nombre
+    <select id="obtenerCategorias" resultType="model.pojos.Categoria">
+        SELECT * FROM categoria ORDER BY nombre
+    </select>
+
+    <select id="obtenerCategoriaCurso" parameterType="int" resultType="model.pojos.Categoria">
+        SELECT * FROM categoria WHERE idCategoria = #{idCategoria} LIMIT 1
+    </select>
+
+    <select id="obtenerMaestroCurso" parameterType="int" resultType="model.pojos.Maestro">
+        SELECT * FROM maestro WHERE idMaestro = #{idMaestro} LIMIT 1
     </select>
     
     <select id="obtenerCurso" resultType="model.pojos.Curso" parameterType="String">
         SELECT * FROM curso WHERE nombre = #{nombre}
     </select>    
     
-     <insert id="registrarCurso" parameterType="model.pojos.Curso">
+    <insert id="registrarCurso" parameterType="model.pojos.Curso">
         INSERT INTO curso (nombre,idcategoria,precio,fechaInicio,fechaFin,imagen)
         VALUES(#{nombre},#{idcategoria},#{precio},#{fechaInicio},#{fechaFin},#{imagen})
     </insert>
@@ -36,12 +44,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <select id="obtenerGrupoDeCurso" resultType="model.pojos.Grupo">
         SELECT g.idgrupo, g.cupo, g.alumnos, g.idcurso
         FROM grupo g
-        LEFT OUTER JOIN curso c ON c.idGrupo = g.idGrupo
+        LEFT OUTER JOIN curso c ON c.idCurso = g.idCurso
     </select>
     
     <insert id="registrarGrupo" parameterType="model.pojos.Grupo">
-        INSERT INTO grupo (idGrupo,idCurso)
-        VALUES(#{idCurso},#{idCurso})
+        INSERT INTO grupo (idCurso)
+        VALUES(#{idCurso})
     </insert>
+
+    <insert id="registrarPago" parameterType="model.pojos.Pago">
+        INSERT INTO pago (informacionDePago, estado, idUsuario, idGrupo)
+        VALUES(#{informacionDePago}, #{estado}, #{idUsuario}, #{idGrupo})
+    </insert>
+
+    <update id="nuevoEstudianteGrupo" parameterType="model.pojos.Grupo">
+        UPDATE grupo SET
+        alumnos = alumnos + 1
+        WHERE idGrupo = #{idGrupo}
+    </update>
 </mapper>
 

@@ -26,7 +26,7 @@ public class Curso {
     public Curso() {
     }
 
-    public Curso(Integer idCurso, String nombre, Integer idCategoria, Double precio, Date fechaInicio, Date fechaFin, String imagen, Integer idmaestro) {
+    public Curso(Integer idCurso, String nombre, Integer idCategoria, Double precio, Date fechaInicio, Date fechaFin, String imagen, Integer idMaestro) {
         this.idCurso = idCurso;
         this.nombre = nombre;
         this.idCategoria = idCategoria;
@@ -34,7 +34,7 @@ public class Curso {
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.imagen = imagen;
-        this.idMaestro = idmaestro;
+        this.idMaestro = idMaestro;
     }
         
     public Integer getIdCurso() {

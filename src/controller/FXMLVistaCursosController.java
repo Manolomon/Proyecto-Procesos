@@ -11,7 +11,6 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -29,6 +28,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import model.dao.CursoDAO;
+import model.pojos.Categoria;
 import model.pojos.Curso;
 import model.pojos.Usuario;
 
@@ -72,7 +72,7 @@ public class FXMLVistaCursosController implements Initializable {
 
   private Usuario user;
 
-  private ArrayList<String> categorias = new ArrayList<>();
+  private List<Categoria> categorias;
 
   private List<Curso> cursos;
 
@@ -88,7 +88,7 @@ public class FXMLVistaCursosController implements Initializable {
   @Override
   public void initialize(URL url, ResourceBundle rb) {
     cargarCategorias();
-    //cargarCursos(null);
+    cargarCursos(null);
   }
 
   /**
@@ -116,7 +116,7 @@ public class FXMLVistaCursosController implements Initializable {
       Logger.getLogger(FXMLVistaCursosController.class.getName()).log(Level.SEVERE, null, ex);
     }
     FXMLVistaCursoIndividualController display = loader.getController();
-    display.asignarDatos(curso);
+    display.asignarDatos(user, curso);
     StackPane agregarView = loader.getRoot();
     Scene newScene = new Scene(agregarView);
     Stage curStage = (Stage) rootPane.getScene().getWindow();
@@ -131,29 +131,19 @@ public class FXMLVistaCursosController implements Initializable {
 
   public void cargarCategorias() {
     listCategories.getItems().clear();
-    cursos = CursoDAO.obtenerAllCursosOrdenados();
-    if (cursos != null) {
-      String categoria = cursos.get(0).getCategoria();
-      String iteracion = categoria;
-      for (Curso curso : cursos) {
-        iteracion = curso.getCategoria();
-        if (!categoria.equals(iteracion)) {
-          categoria = curso.getCategoria();
-        } else {
-          categorias.add(curso.getCategoria());
-          try {
-            Label lbl = new Label(curso.getCategoria());
-            lbl.setGraphic(new ImageView(new Image(getClass().getResourceAsStream("/resources/Book.png"))));
-            listCategories.getItems().add(lbl);
-          } catch (Exception ex) {
-            System.err.println("Error: " + ex);
-          }
+    categorias = CursoDAO.obtenerCategorias();
+    for (Categoria cat : categorias) {
+        try {
+          Label lbl = new Label(cat.getNombre());
+          lbl.setGraphic(new ImageView(new Image(getClass().getResourceAsStream("/resources/Book.png"))));
+          listCategories.getItems().add(lbl);
+        } catch (Exception ex) {
+          System.err.println("Error: " + ex);
         }
-      }
     }
   }
 
-  public void cargarCursos(String categoria) {
+  public void cargarCursos(Categoria categoria) {
     listCourses.getItems().clear();
     cursos = CursoDAO.obtenerAllCursosDeCategoria(categoria);
     for(Curso curso : cursos) {

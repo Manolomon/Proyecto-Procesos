@@ -17,7 +17,15 @@ public class Grupo {
     private Integer alumnos;
     private Integer idCurso;
 
-    public Grupo() {
+    public Grupo(Integer idGrupo, Integer cupo, Integer alumnos, Integer idCurso) {
+        this.idGrupo = idGrupo;
+        this.cupo = cupo;
+        this.alumnos = alumnos;
+        this.idCurso = idCurso;
+    }
+
+    public Grupo(Integer idCurso) {
+        this.idCurso = idCurso;
     }
 
     public Integer getIdGrupo() {
