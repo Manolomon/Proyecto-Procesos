@@ -30,7 +30,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton layoutX="689.0" layoutY="9.0" prefHeight="17.0" prefWidth="15.0" style="-fx-background-color: #eb5c4b; -fx-background-radius: 30;" text="8" textFill="WHITE">
+                  <JFXButton layoutX="689.0" layoutY="9.0" prefHeight="17.0" prefWidth="15.0" style="-fx-background-color: #eb5c4b; -fx-background-radius: 30;" text="8" textFill="WHITE" visible="false">
                      <font>
                         <Font name="Futura Medium" size="10.0" />
                      </font>
