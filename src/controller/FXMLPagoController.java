@@ -180,31 +180,30 @@ public class FXMLPagoController implements Initializable {
   void clickPagar(ActionEvent event) {
     if(!camposIncompletos()) {
         List<Grupo> grupos = CursoDAO.obtenerGrupoDeCurso(curso.getIdCurso());
-//        boolean agregado = false;
-//        Pago pago = new Pago();
-//        for(Grupo group : grupos) {
-//            if(group.getAlumnos() < 30) {
-//                pago = new Pago(curso.getNombre(), "aprobado", user.getIdUsuario(), group.getIdGrupo());
-//                agregado = true;
-//                break;
-//            }
-//        }
-//        if(!agregado) {
-//            CursoDAO.registrarGrupo(new Grupo(curso.getIdCurso()));
-//            grupos = CursoDAO.obtenerGrupoDeCurso(curso.getIdCurso());
-//            Grupo nuevoGrupo = grupos.get(grupos.size() - 1);
-//            CursoDAO.nuevoEstudianteGrupo(nuevoGrupo);
-//            pago = new Pago(curso.getNombre(), "aprobado", user.getIdUsuario(), nuevoGrupo.getIdGrupo());
-//        }
+       boolean agregado = false;
+       Pago pago = new Pago();
+       for(Grupo group : grupos) {
+           if(group.getAlumnos() < 30) {
+               pago = new Pago("Pago del curso: " + curso.getNombre() + " Folio: " + txtFolio.getText(), "pendiente", user.getIdUsuario(), group.getIdGrupo());
+               agregado = true;
+               break;
+           }
+       }
+       if(!agregado) {
+           CursoDAO.registrarGrupo(new Grupo(curso.getIdCurso()));
+           grupos = CursoDAO.obtenerGrupoDeCurso(curso.getIdCurso());
+           Grupo nuevoGrupo = grupos.get(grupos.size() - 1);
+           CursoDAO.nuevoEstudianteGrupo(nuevoGrupo);
+           pago = new Pago("Pago del curso: " + curso.getNombre() + " Folio: " + txtFolio.getText(), "pendiente", user.getIdUsuario(), nuevoGrupo.getIdGrupo());
+       }
         Grupo ultimoGrupoDeCurso = grupos.get(grupos.size() - 1);
-        Pago pago = new Pago();
         if (ultimoGrupoDeCurso.getAlumnos() < 30) {
-            pago = new Pago(curso.getNombre(), "aprobado", user.getIdUsuario(), ultimoGrupoDeCurso.getIdGrupo());
+            pago = new Pago("Pago del curso: " + curso.getNombre() + " Folio: " + txtFolio.getText(), "pendiente", user.getIdUsuario(), ultimoGrupoDeCurso.getIdGrupo());
         } else {
             CursoDAO.registrarGrupo(new Grupo(curso.getIdCurso()));
             grupos = CursoDAO.obtenerGrupoDeCurso(curso.getIdCurso());
             ultimoGrupoDeCurso = grupos.get(grupos.size() - 1);
-            pago = new Pago(curso.getNombre(), "aprobado", user.getIdUsuario(), ultimoGrupoDeCurso.getIdGrupo());
+            pago = new Pago("Pago del curso: " + curso.getNombre() + " Folio: " + txtFolio.getText(), "pendiente", user.getIdUsuario(), ultimoGrupoDeCurso.getIdGrupo());
         }
         CursoDAO.nuevoEstudianteGrupo(ultimoGrupoDeCurso);
         if(CursoDAO.registrarPago(pago)) {

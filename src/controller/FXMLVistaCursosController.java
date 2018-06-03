@@ -8,6 +8,7 @@
 package controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXListView;
 import java.io.IOException;
 import java.net.URL;
@@ -19,13 +20,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.control.Label;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.dao.CursoDAO;
 import model.pojos.Categoria;
@@ -66,6 +70,9 @@ public class FXMLVistaCursosController implements Initializable {
 
   @FXML
   private JFXListView<Label> listCategories;
+  
+  @FXML
+  private JFXDrawer drawer;
 
   // ==================================================================================================================
   // Recursos de la Base de Datos
@@ -89,6 +96,9 @@ public class FXMLVistaCursosController implements Initializable {
   public void initialize(URL url, ResourceBundle rb) {
     cargarCategorias();
     cargarCursos(null);
+    drawer.setResizeContent(true);
+    drawer.setOverLayVisible(false);
+    drawer.setResizableOnDrag(true);
   }
 
   /**
@@ -117,6 +127,23 @@ public class FXMLVistaCursosController implements Initializable {
     }
     FXMLVistaCursoIndividualController display = loader.getController();
     display.asignarDatos(user, curso);
+    StackPane agregarView = loader.getRoot();
+    Scene newScene = new Scene(agregarView);
+    Stage curStage = (Stage) rootPane.getScene().getWindow();
+    curStage.setScene(newScene);
+    curStage.show();
+  }
+  
+  public void cargarMisCursos() {
+    FXMLLoader loader = new FXMLLoader();
+    loader.setLocation(getClass().getResource("/view/FXMLVerMisCursos.fxml"));
+    try {
+      loader.load();
+    } catch (IOException ex) {
+      Logger.getLogger(FXMLVistaCursosController.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    FXMLVerMisCursosController display = loader.getController();
+    display.asignarDatos(user);
     StackPane agregarView = loader.getRoot();
     Scene newScene = new Scene(agregarView);
     Stage curStage = (Stage) rootPane.getScene().getWindow();
@@ -164,6 +191,45 @@ public class FXMLVistaCursosController implements Initializable {
   // ==================================================================================================================
   // Eventos FXML
 
+  
+  @FXML
+    void clickHamburger(ActionEvent event) {
+        try {
+            VBox box;
+            box = FXMLLoader.load(getClass().getResource("/view/FXMLDrawerEstudiante.fxml"));
+            for (Node node : box.getChildren()) {
+                node.addEventHandler(MouseEvent.MOUSE_CLICKED, (e) -> {
+                    if (node.getAccessibleText() != null) {
+                        switch (node.getAccessibleText()) {
+                        case "Ver catálogo":
+                            drawer.close();
+                            drawer.setMouseTransparent(true);
+                            break;
+                        case "Ver mis cursos":
+                            cargarMisCursos();
+                            break;
+                        case "Configurar cuenta":
+                            break;
+                        }
+                        drawer.close();
+                        drawer.setMouseTransparent(true);
+                    }
+                });
+            }
+            drawer.setSidePane(box);
+            drawer.setEffect(new DropShadow());
+            drawer.open();
+            drawer.setMouseTransparent(false);
+        } catch (IOException e) {
+
+        }
+    }
+  
+  @FXML
+  void cerrarDrawer(MouseEvent event) {
+    drawer.close();
+    drawer.setMouseTransparent(true);
+  }
   /**
    * Evento de click en el botón de Inbox
    * 

@@ -8,6 +8,7 @@ package model.dao;
 import java.util.ArrayList;
 import java.util.List;
 import model.MyBatisUtils;
+import model.pojos.Curso;
 import model.pojos.Usuario;
 import model.pojos.Grupo;
 import model.pojos.Login;
@@ -89,6 +90,23 @@ public class UsuarioDAO {
         try{
             conn = MyBatisUtils.getSession();
             lista = conn.selectList("Usuario.obtenerGrupoDeUsuario",id);
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally{
+            if(conn!=null){
+                conn.close();
+            }
+        }
+        return lista;
+    }
+   
+   public static List<Curso> obtenerCursosDeUsuario(Integer id)
+    {
+        List<Curso> lista = null;
+        SqlSession conn = null;
+        try{
+            conn = MyBatisUtils.getSession();
+            lista = conn.selectList("Usuario.obtenerCursosDeUsuario",id);
         }catch(Exception ex){
             ex.printStackTrace();
         }finally{

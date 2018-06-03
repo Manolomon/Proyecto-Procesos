@@ -25,7 +25,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         SELECT g.idgrupo, g.cupo, g.alumnos, g.idcurso
         FROM grupo g
         LEFT OUTER JOIN pago p ON p.idGrupo = g.idGrupo
-        LEFT OUTER JOIN usuario s ON s.idUsuario = p.idUsuaio
-    </select>
+        LEFT OUTER JOIN usuario s ON s.idUsuario = p.idUsuario 
+    </select> 
+     
+    <select id="obtenerCursosDeUsuario" resultType="model.pojos.Curso" parameterType="Integer"> 
+        SELECT c.idCurso, c.nombre, c.idCategoria, c.precio, c.fechaInicio, c.fechaFin, c.imagen, c.idMaestro FROM curso c 
+        LEFT OUTER JOIN grupo g ON g.idCurso = c.idCurso 
+        LEFT OUTER JOIN pago p ON p.idGrupo = g.idGrupo 
+        LEFT OUTER JOIN usuario s ON s.idUsuario = p.idUsuario
+        WHERE s.idUsuario = #{idUsuario}
+    </select> 
 </mapper>
 
