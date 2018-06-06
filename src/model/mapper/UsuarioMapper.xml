@@ -12,7 +12,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         SELECT * FROM usuario WHERE matricula = #{matricula} AND contrasena = #{contrasena} LIMIT 1
     </select>    
     
-     <insert id="registrarUsuario" parameterType="model.pojos.Usuario">
+    <insert id="registrarUsuario" parameterType="model.pojos.Usuario">
         INSERT INTO usuario (CURP,nombre,apellidoPaterno,apellidoMaterno,fechaNacimiento,genero,matricula,contrasena)
         VALUES(#{CURP},#{nombre},#{apellidoPaterno},#{apellidoMaterno},#{fechaNacimiento},#{genero},#{matricula},#{contrasena})
     </insert>
@@ -33,7 +33,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         LEFT OUTER JOIN grupo g ON g.idCurso = c.idCurso 
         LEFT OUTER JOIN pago p ON p.idGrupo = g.idGrupo 
         LEFT OUTER JOIN usuario s ON s.idUsuario = p.idUsuario
-        WHERE s.idUsuario = #{idUsuario}
-    </select> 
+        WHERE s.idUsuario = #{idUsuario} AND p.estado = "aprobado"
+    </select>
+
+    <select id="obtenerUsuarioId" resultType="model.pojos.Usuario" parameterType="Integer">
+        SELECT * FROM Usuario WHERE idUsuario = #{idUsuario}
+    </select>
+    
 </mapper>
 

@@ -8,7 +8,7 @@ CU - 01 Iniciar Sesión
 
 Usuario
 
-### Descripcion:
+### Descripción:
 
 En este caso de uso, el Usuario ingresa sus datos de identificación para ingresar al sistema.
 

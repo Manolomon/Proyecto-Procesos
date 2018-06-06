@@ -62,5 +62,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         alumnos = alumnos + 1
         WHERE idGrupo = #{idGrupo}
     </update>
+
+    <select id="obtenerCursoId" resultType="model.pojos.Curso" parameterType="Integer">
+        SELECT c.idCurso, c.nombre, c.idCategoria, c.precio, c.fechaInicio, c.fechaFin, c.imagen, c.idMaestro 
+        FROM Curso c 
+        LEFT OUTER JOIN Grupo g 
+        ON g.idCurso = c.idCurso 
+        WHERE g.idGrupo = #{idGrupo} LIMIT 1
+    </select>
+
+    <select id="obtenerPagosPendientes" resultType="model.pojos.Pago">
+        SELECT * FROM Pago WHERE estado = "pendiente"
+    </select>
+
+    <update id="aprobarPago" parameterType="Integer">
+        UPDATE Pago SET estado = "aprobado" WHERE idPago = #{idPago};
+    </update>
+
+    <update id="rechazarPago" parameterType="Integer">
+        UPDATE Pago SET estado = "rechazado" WHERE idPago = #{idPago};
+    </update>
+
 </mapper>
 

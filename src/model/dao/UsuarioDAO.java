@@ -116,4 +116,21 @@ public class UsuarioDAO {
         }
         return lista;
     }
+
+    public static Usuario obtenerUsuarioId(Integer idUsuario)
+    {
+        Usuario user = null;
+        SqlSession conn = null;
+        try{
+            conn = MyBatisUtils.getSession();
+            user = conn.selectOne("Usuario.obtenerUsuarioId", idUsuario);
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally{
+            if(conn!=null){
+                conn.close();
+            }
+        }
+        return user;
+    }
 }

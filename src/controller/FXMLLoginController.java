@@ -97,6 +97,22 @@ public class FXMLLoginController implements Initializable {
   }
 
   /**
+   * Carga de la pantalla del modo Administrador
+   */
+  public void cargarEscenaAdmin() {
+    try {
+      StackPane registroView;
+      registroView = FXMLLoader.load(getClass().getResource("/view/FXMLSolicitudes.fxml"));
+      Scene newScene = new Scene(registroView);
+      Stage curStage = (Stage) rootPane.getScene().getWindow();
+      curStage.setScene(newScene);
+      curStage.show();
+    } catch (IOException e) {
+      System.out.println("No se enecontró: " + e);
+    }
+  }
+
+  /**
    * Carga de la pantalla de Vista General de Cursos
    */
   public void cargarEscenaVistaCursos(Usuario user) {
@@ -157,13 +173,17 @@ public class FXMLLoginController implements Initializable {
    */
   public void iniciarSesion() {
     if (!camposIncompletos()) {
-      datosIngresados = new Login(txtUsuario.getText(), txtPassword.getText());
-      usuario = UsuarioDAO.obtenerUsuario(datosIngresados);
-      if (usuario != null) {
-        cargarEscenaVistaCursos(usuario);
-      } else {
-        showDialog("Usuario no registrado", "Revise su matrícula y su contraseña");
-      }
+      if("admin".equals(txtUsuario.getText()) && "admin".equals(txtPassword.getText())) {
+        cargarEscenaAdmin();
+      }else {
+        datosIngresados = new Login(txtUsuario.getText(), txtPassword.getText());
+        usuario = UsuarioDAO.obtenerUsuario(datosIngresados);
+        if (usuario != null) {
+          cargarEscenaVistaCursos(usuario);
+        } else {
+          showDialog("Usuario no registrado", "Revise su matrícula y su contraseña");
+        }
+      }  
     } else {
       showDialog("Campos incompletos", "Por favor llene todos los campos necesarios");
     }

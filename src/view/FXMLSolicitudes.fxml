@@ -10,38 +10,12 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="rootPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLVistaCursoIndividualController">
+<StackPane fx:id="rootPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLSolicitudesController">
    <children>
       <AnchorPane maxHeight="570.0" maxWidth="930.0" minHeight="570.0" minWidth="930.0" prefHeight="570.0" prefWidth="930.0" style="-fx-background-color: #282c36;">
          <children>
             <AnchorPane prefHeight="50.0" prefWidth="932.0" style="-fx-background-color: #282c36;">
                <children>
-                  <JFXButton layoutX="714.0" layoutY="4.0" text="Daniela Hernandez" textFill="WHITE">
-                     <font>
-                        <Font name="Futura Medium" size="16.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="30.0">
-                           <image>
-                              <Image url="@../resources/Profile.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </JFXButton>
-                  <JFXButton layoutX="689.0" layoutY="9.0" prefHeight="17.0" prefWidth="15.0" style="-fx-background-color: #eb5c4b; -fx-background-radius: 30;" text="8" textFill="WHITE">
-                     <font>
-                        <Font name="Futura Medium" size="10.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton layoutX="659.0" layoutY="6.0" prefHeight="45.0" prefWidth="60.0" text=" " textFill="WHITE">
-                     <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="30.0">
-                           <image>
-                              <Image url="@../resources/Inbox.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </JFXButton>
                   <JFXButton layoutX="-4.0" layoutY="1.0" prefHeight="48.0" prefWidth="106.0" text="Menu" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0">
@@ -67,28 +41,28 @@
             <AnchorPane layoutX="589.0" layoutY="103.0" prefHeight="421.0" prefWidth="304.0" style="-fx-background-color: ffffff;">
                <children>
                   <ImageView fitHeight="183.0" fitWidth="293.0" layoutX="10.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" />
-                  <JFXButton fx:id="btnInscribirse" layoutX="13.0" layoutY="357.0" onAction="#clickInscribirse" prefHeight="37.0" prefWidth="135.0" style="-fx-border-color: #82bc3c; -fx-border-radius: 10;" text="Aceptar" textFill="#82bc3c">
+                  <JFXButton fx:id="buttonAceptar" layoutX="13.0" layoutY="357.0" onAction="#clickAceptar" prefHeight="37.0" prefWidth="135.0" style="-fx-border-color: #82bc3c; -fx-border-radius: 10;" text="Aceptar" textFill="#82bc3c">
                      <font>
                         <Font name="Futura Bold" size="17.0" />
                      </font>
                   </JFXButton>
-                  <Label fx:id="lblPrecio" layoutX="15.0" layoutY="228.0" prefHeight="25.0" prefWidth="279.0" text="Nombre">
+                  <Label fx:id="labelNombre" layoutX="15.0" layoutY="228.0" prefHeight="25.0" prefWidth="279.0" text="Nombre">
                      <font>
                         <Font name="Futura Medium" size="19.0" />
                      </font>
                   </Label>
                   <ImageView fx:id="imageCurso" fitHeight="171.0" fitWidth="272.0" layoutX="20.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
-                  <JFXButton fx:id="btnInscribirse1" layoutX="160.0" layoutY="359.0" onAction="#clickInscribirse" prefHeight="37.0" prefWidth="135.0" style="-fx-border-color: #ff2941; -fx-border-radius: 10;" text="Rechazar" textFill="#ff2941">
+                  <JFXButton fx:id="buttonRechazar" layoutX="160.0" layoutY="359.0" onAction="#clickRechazar" prefHeight="37.0" prefWidth="135.0" style="-fx-border-color: #ff2941; -fx-border-radius: 10;" text="Rechazar" textFill="#ff2941">
                      <font>
                         <Font name="Futura Bold" size="17.0" />
                      </font>
                   </JFXButton>
-                  <Label fx:id="lblPrecio1" layoutX="15.0" layoutY="263.0" prefHeight="25.0" prefWidth="279.0" text="Apellido Paterno">
+                  <Label fx:id="labelApellidoPaterno" layoutX="15.0" layoutY="263.0" prefHeight="25.0" prefWidth="279.0" text="Apellido Paterno">
                      <font>
                         <Font name="Futura Medium" size="19.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblPrecio2" layoutX="15.0" layoutY="298.0" prefHeight="25.0" prefWidth="279.0" text="Apellido Materno">
+                  <Label fx:id="labelApellidoMaterno" layoutX="15.0" layoutY="298.0" prefHeight="25.0" prefWidth="279.0" text="Apellido Materno">
                      <font>
                         <Font name="Futura Medium" size="19.0" />
                      </font>
@@ -103,7 +77,7 @@
                         <Font name="Futura Bold" size="19.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblPrecio4" layoutX="14.0" layoutY="116.0" prefHeight="25.0" prefWidth="279.0" text="Nombre del curso">
+                  <Label fx:id="labelNombreCurso" layoutX="14.0" layoutY="116.0" prefHeight="25.0" prefWidth="279.0" text="Nombre del curso">
                      <font>
                         <Font name="Futura Medium" size="19.0" />
                      </font>
@@ -118,8 +92,15 @@
                   <DropShadow />
                </effect>
             </AnchorPane>
-            <JFXButton fx:id="btnBack" layoutX="1.0" layoutY="56.0" onAction="#clickBack" prefHeight="48.0" prefWidth="71.0" text=" " textFill="#282c36" />
-            <JFXListView layoutX="30.0" layoutY="175.0" prefHeight="346.0" prefWidth="472.0">
+            <JFXButton fx:id="btnBack" layoutX="34.0" layoutY="63.0" onAction="#clickBack" prefHeight="48.0" prefWidth="71.0" text=" " textFill="#282c36">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/Arrow%20Left.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <JFXListView fx:id="listPagosPendientes" layoutX="30.0" layoutY="175.0" onMouseClicked="#clickListPagos" prefHeight="346.0" prefWidth="472.0">
                <effect>
                   <DropShadow />
                </effect>

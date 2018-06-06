@@ -236,4 +236,71 @@ public class CursoDAO {
         }
         return false;
     }
+
+    public static Curso obtenerCursoId(Integer idCurso)
+    {
+        Curso curso = null;
+        SqlSession conn = null;
+        try{
+            conn = MyBatisUtils.getSession();
+            curso = conn.selectOne("Curso.obtenerCursoId", idCurso);
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally{
+            if(conn!=null){
+                conn.close();
+            }
+        }
+        return curso;
+    }
+    public static List<Pago> obtenerPagosPendientes()
+    {
+        List<Pago> lista = new ArrayList<Pago>();
+        SqlSession conn = null;
+        try{
+            conn = MyBatisUtils.getSession();
+            lista = conn.selectList("Curso.obtenerPagosPendientes");
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally{
+            if(conn!=null){
+                conn.close();
+            }
+        }
+        return lista;
+    }
+
+    public static boolean rechazarPago(Integer idPago){
+        SqlSession conn = null;
+        try{
+            conn = MyBatisUtils.getSession();
+            conn.insert("Curso.rechazarPago", idPago);
+            conn.commit();
+            return true;
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally{
+            if(conn!=null){
+                conn.close();
+            }
+        }
+        return false;
+    }
+
+    public static boolean aprobarPago(Integer idPago){
+        SqlSession conn = null;
+        try{
+            conn = MyBatisUtils.getSession();
+            conn.insert("Curso.aprobarPago", idPago);
+            conn.commit();
+            return true;
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally{
+            if(conn!=null){
+                conn.close();
+            }
+        }
+        return false;
+    }
 }
